@@ -1,0 +1,95 @@
+3 types of structs
+TaskDescriptor -> see oib
+CommunicationUnkn
+	0x0		started
+	0x4		done
+	0x8		LinkedList->prev
+	0xC		LinkedList->next
+		this linked list can get edited in task_yield_and_add_current_to_some_queue
+CommunicationUnkn2
+	stack handler for CommunicationUnkn?
+
+---
+
+Offsets:
+
+taskList:
+	position in the list of all of the tasks
+runqueueList
+	tasks scheduled to be run.
+	does include currently running task!
+	tasks get run in the order head to tail
+	runqueueList offset in TaskDescriptor can actually be in multiple different queues depending on
+		whether it is running or not?
+	initialization: NULL (=not in one of the queues below?)
+linked_list_3
+	same type as the one at CommunicationUnkn+8?
+	initialization: next, prev = this->linked_list_3 (circular queue with only 1 value)
+
+Queues:
+	taskList
+		list of all tasks
+		uses TaskDescriptor->taskList offset
+		set in task_descriptor_setup
+		does not include idle/bootstrap
+	runQueue
+		tasks waiting to run.
+		does not include currently running task
+		uses TaskDescriptor->runqueueList
+		points to TaskDescriptor->runqueueList
+		does not include idle/bootstrap
+	childList
+		list of non-running tasks "owned" by a task/struct
+		uses CommunicationUnkn+8 offset
+		points to TaskDescriptor->runqueueList?
+		uses TaskDescriptor->linked_list_3?
+		runqueueList offset can be overwritten when adding to the runQueue? (eg: 0FF166E0)
+		there is one of these for each task!
+		CommunicationUnkn structs are specifically for these lists!
+
+---
+
+"Sentinels":
+
+prev -> end of list
+next -> start of list
+(these kind of make the list into something circular)
+
+---
+
+CommunicationUnkn
+0x0: doneRunning
+	-> always 0 after the setup
+	if 1, doesn't add a new task in task_make_child_communkn_unkn
+	set to 0 if a single task was run in communication_run_children, 1 otherwise
+	set to 0 in communication_unkn_clear_started
+0x4: runIndividually
+	1 after setup unless tied to a CommUnkn2 struct
+	if not 1, runs all children in communication_dispatch_unkn
+
+---
+
+Understood functions:
+
+task_add_to_head_of_run_queue (0FF163E0)
+task_create (0FF164E0)
+task_descriptor_regs_setup (0FF17438)
+task_descriptor_setup (0FF16440)
+task_exit (0FF1684A)
+task_idle_task_routine (0FF16740)
+task_init_idle_task (0FF16548)
+task_list_become_child (0FF16714)
+task_make_child_from_current_task (0FF166E0)
+task_run_all_children (0FF167C8)
+task_run (0FF17464)
+task_set_state_running (0FF16408)
+task_sleep (0FF166A4)
+task_start (0FF16420)
+task_swap_start_previous (0FF17048)
+task_swap_stop_current (0FF17040)
+task_swap_to (0FF17034)
+task_yield (0FF165BE)
+... all good now?
+
+Not understood functions:
+

@@ -1,0 +1,6 @@
+usage:
+spi0: nor-flash (in devtree, there isn't actually anything here)
+spi1: nor-flash
+spi2: -
+spi3: -
+spi4: multitouch

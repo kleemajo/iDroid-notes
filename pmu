@@ -1,0 +1,78 @@
+PMU writing:
+	-> uses i2c_tx, bus = 0, PMU_SET_ADDR = 0xE6
+
+PMU reading:
+	-> uses i2c_rx, bus = 0, PMU_GET_ADDR = 0xE7
+	-> reading 3 bytes from reg 4 returns a uint8_t array with {*4, *5, *6}
+
+Registers:
+	group0 (0x1-3):
+	0x1:
+		bit 0: home button was pressed (reset on read)
+		bit 1: power button was pressed (reset on read)
+		bit 2: checked for in llb unkn_setup_1
+		bit 3: checked for in llb unkn_setup_1
+	0x2:
+		read and cleared in pmu_unkn_8
+		bit 1: loop until set after a clear in pmu_unkn_8
+		bit 7: cache updated again in llb unkn_setup_1 if not set
+	0x3:
+		bit 1: returned in llb_unkn_setup_1
+		bit 3: checked for in llb unkn_setup_1
+		bit 4: checked for in llb unkn_setup_1
+	0x4:
+		bit 3: 1 = usb powered, 0 = firewire or battery
+	0x5:
+	0x6:
+		bit 3: 1 = firewire powered, 0 = usb or battery
+	0x7:
+		written to in pmu_write_oocshdwn
+	0x8:
+		written to in pmu_write_oocshdwn
+	0x9:
+		written to in pmu_write_oocshdwn
+	0xD:
+	0xA:
+		written to in pmu_write_oocshdwn
+	0x20:
+		written to using pmu_write_reg
+	0x30: =backlight level
+		-> max = 0x67 under certain conditions, 0xF5 in others. Default = 0x30
+		written to in pmu_set_backlight
+	0x31: =backlight status
+		-> 5 = backlight on, 0 = backlight off.
+		written to using pmu_write_reg
+		written to in pmu_set_backlight
+	0x40:
+		written to using pmu_write_reg
+	0x41:
+		read in pmu_write_reg
+		only bits 0 and 1 used?
+		contains lower bits for 0x42? ((*0x42 << 2) | (*0x41 & 0x3))
+	0x42:
+		read in pmu_write_Reg
+		contains upper bits for 0x41? ((*0x42 << 2) | (*0x41 & 0x3))
+
+Functions:
+	openiboot:							iboot:
+	==============
+	pmu_setup							N/A	
+	pmu_write_oocshdwn
+	pmu_poweroff
+	pmu_set_iboot_stage
+	pmu_get_gpmem_reg
+	pmu_set_gpmem_reg
+	pmu_get_reg							pmu_get_3_bytes (kinda...)
+	pmu_get_regs						pmu_get_3_bytes (kinda...)
+	pmu_write_reg
+	query_adc
+	pmu_get_battery_voltage
+	bcd_to_int
+	get_dayofweek_str
+	pmu_get_epoch
+	epoch_to_date
+	pmu_date
+	identify_usb_charger				pmu_get_power_supply
+	pmu_get_power_supply				pmu_get_power_supply
+	pmu_charge_settings
+	pmu_gpio

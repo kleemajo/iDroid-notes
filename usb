@@ -1,0 +1,542 @@
+registers:
+	0x38400048: hwcfg3
+		S5L8900: 0x7A8F60D0
+		
+	0x38400050: hwcfg4
+		S5L8900: 0x01f08024
+		S5L8720: 0x02000000 set, this bit isn't for S5L8900 though!
+
+vars:
+	=== 0xFF26600 range ===
+	
+	0xFF26678: should clear EP0 nak
+		nak gets cleared if this is on, doesn't if it isn't
+		
+	0xFF2667C:
+		descriptor array
+		offset	item
+		9-8		vendor
+		11-10	device id
+		13-12	0 (some other usb descriptor probably)
+		14		manufacturer string descriptor index
+		15		product string descriptor index
+		16		device details string descriptor index
+
+	=== 0xFF27300 range ===
+	
+	0xFF273A0:
+		stores the address of usb_unkn_12 for the periodic calling
+		
+	=== 0xFF27500 range ===
+
+	0xFF27520:
+		pointer to 480 bytes allocated and zeroed in usb_setup
+		usb related data structure of some kind
+		freed in usb_stop
+		zeroed in usb_irq_handler -> reset
+		-> array of 40 (0x2C) byte structs organized as follows:
+			offset	hex		item
+			0		0		EP 0 in
+			40		0x28	EP 0 out
+			80		0x50	EP 1 in
+			120		0x78	EP 1 out
+			160 	0xA0	EP 2 in
+			200 	0xC8	EP 2 out
+			240 	0xF0	EP 3 in
+			280 	0x118	EP 3 out
+			320 	0x140	EP 4 in
+			360 	0x168	EP 4 out
+			400 	0x190	EP 5 in
+			440 	0x1B8	EP 5 out
+		-> struct format
+			addr	item
+			0x0		= EP num (in/out (1/0 of 0x80) + 0x7F for ep num)
+					-> set in usb_setup_ep
+			0x4		= packet size
+					-> set in usb_setup_ep
+					read in usb_disable_ep_in
+					read in usb_disable_multiple_ep_in_s5l8900
+			0x8		= endpoint type
+					R1 of usb_setup_ep (always = 2 which is bulk)
+			0xC		= token
+					-> set in usb_setup_ep
+			0x10	= currentPacketSize
+					read in usb_disable_multiple_ep_in_s5l8900 something to do with 0x14
+					read in usb_disable_ep_in
+					set to 0 in usb_disable_ep
+					read from in usb_handle_endpoint_in_interrupt
+					read from in usb_irq_handler -> handle_endpoint_out
+					set to value of xfersize in transferSize reg in usb_send
+			0x14	= currentTransferPacketsLeft
+					read in usb_disable_multiple_ep_in_s5l8900 something to do with 0x10
+					read in usb_disable_ep_in
+					set to 0 in usb_disable_ep
+					read from in usb_handle_endpoint_in_interrupt
+					set to value of pktcnt in transferSize reg in usb_send
+			0x18	= S5L8900 next EP to disable
+					written to in in usb_unkn_s5l8900
+					-> nextEPToDisable
+					-> S5l8900 only
+					-> related to 0xFF27528 and 0xFF27530
+					-> pointer to next array in 0xFF27520 to disable
+			0x1C	= head of transfer queue
+					used as an array
+					read from in usb_send
+					read from in usb_receive and used as array
+					read from in usb_start_transfer and used as an array
+					array here and at 0x20 offset set in usb_start_transfer
+					read from in usb_disable_ep_in
+					read from in usb_disable_ep
+					read from in usb_handle_endpoint_in_interrupt
+					set to 0 in usb_handle_endpoint_in_interrupt under some conditions
+					---
+					array at this offset:
+						-> represents a transfer of data
+						offset	item
+						0x0		= endpoint
+						0x4		= buffer
+								-> memaligned block
+						0x8		= status
+								1 -> failed
+								0 -> success
+								-1 -> in progress
+								set to 1 in usb_disable_ep right before deleting the mini-array...
+								set to 0 in usb_handle_endpoint_in_interrupt
+								set to -1 in usb_start_transfer
+						0xC		= bytesToSend
+						0x10	= bytesSent
+						0x14	= handler
+						0x18	= pointer to next transfer on this ep/dir
+			0x20	= tail of transfer queue
+					array, set in usb_start_transfer
+					set to 0 in usb_disable_ep if 0x1C = 0
+					set to 0 in usb_handle_endpoint_in_interrupt under some conditions
+			0x24	= tx fifo num
+					offset in array at 0xFF27538 + 1
+					read from in usb_clear_ep_config
+					in usb_handle_endpoint_in_interrupt/usb_disable_ep, used as set_bit_12_to_x for GRSTCTL
+					read from in usb_disable_ep_in -> used as set_bit_12_to_x for GRSTCTL
+					set in usb_setup_ep
+					-> if a new ref is found, see function note #1 (usb_flush_tx_fifo)
+
+	0xFF27524: = dedicatedFifoEnabled
+		-> used to determine whether to run the fifo code stuff at runtime (0x2 = run)
+		set based on 0x02000000 of 0x38400050
+		0x1 for S5L8900 -> 0x38400050 bits = 0 -> doesn't have the dedicated fifo
+		0x2 for S5L8720 -> 0x38400050 bits = 1 -> has the dedicated fifo
+		
+	0xFF27528: = nextEPToDisableTail
+		-> S5L8900 only
+		set to 0 in usb_setup
+		-> pointer to the instance of the 0xFF27520 array for an ep/dir
+		-> tail of the nextEPToDisable queue
+		-> related to 0xFF27520->0x18 and 0xFF27530
+		used for S5L8900 only! Yay!
+	
+	0xFF2752C: = nextFifoAddr
+		-> start address for next DPTXFSIZ startaddr
+		-> increased by 0x100 every time that a startaddr is recorded (depth is 0x100)
+		-> reset to 0x21B in usb_irq_handler
+		-> see table of fifo addresses below for a map of them
+	
+	0xFF27530: = nextEPToDisableHead
+		-> S5L8900 only
+		set to 0 in usb_setup
+		pointer to something that holds the num and dir of an EP according to unkn_usb_enable_ep
+		s5l8900 only: set to 0 in usb_irq_handler
+		set to an actual value in usb_unkn_s5l8900
+		ALWAYS 0 for ded_fifo_en (s5l8720)
+		-> pointer to the instance of the 0xFF27520 array for an ep/dir
+		-> head of the nextEPToDisable queue
+		-> related to 0xFF27520->0x18 and 0xFF27528
+		
+	0xFF27534: = EP0 out buffer
+		pointer to 64 byte buffer
+		
+	0xFF27538: = txFifosUsed
+		-> 1 in each index wbere the fifo is in use, 0 where it isn't
+		pointer to 15 uint8_t allocated in usb_setup
+		1 or 0 values only
+		when enabling an ep, the code cycles through this array until it finds a 0, then
+			sets that value to 1 and records the index + 1 at 0xFF27520[n]->0x24
+		other junk:
+			-> s5l8720 only maybe?
+			-> seems to be 0/1 values only
+			-> 0xFF27520[n]->0x24 has index for an ep in this array + 1
+			-> array to show is_enabled_or_disabled maybe?
+			freed in usb_stop
+			contents modified in usb_clear_ep_config
+			accessed as individual bytes in usb_setup_ep_kinda
+			memset in usb_irq_handler for s5l8720 only
+		
+	0xFF2753C: = maxTransferSize
+		set based on bits 0-3 of 0x3840004C
+		all bits on up to a certain bit determined based on the value in those bits + 0xB
+		from a DD-WRT implementation:
+			retval += DWC_OTG_PARAM_CHECK_VALID(max_transfer_size, "max_transfer_size",
+				(dwc_otg_module_params.max_transfer_size <
+				(1 << (core_if->hwcfg3.b.xfer_size_cntr_width + 11))),
+				((1 << (core_if->hwcfg3.b.xfer_size_cntr_width + 11)) - 1));
+	
+	0xFF27540: = maxPacketCount
+		set based on bits 4-6 of 0x3840004C
+		all bits on up to a certain bit determined based on the value in those bits + 0x4
+		from a DD-WRT implementation:
+			retval += DWC_OTG_PARAM_CHECK_VALID(max_packet_count, "max_packet_count",
+				(dwc_otg_module_params.max_packet_count <
+				(1 << (core_if->hwcfg3.b.packet_size_cntr_width + 4))),
+				((1 << (core_if->hwcfg3.b.packet_size_cntr_width + 4)) - 1));
+
+	=== 0xFF28700 range ===
+	
+	0xFF28740:
+		array of bytes
+	
+	0xFF28760:
+		set to ~0 in usb_unkn_14 (usb_setup_main) -> usb_global_something now
+	
+	0xFF2876C:
+		set to 0 in usb_unkn_14 (usb_setup_main) -> usb_global_something now
+	
+	... (more jank in in usb_unkn_14 (usb_setup_main)) -> usb_global_something now
+	
+	0xFF28774: function array #3!
+		0x0		usb_process_setup_packet_class_type
+		0x4		usb_func_array_3_4
+		0x8		-
+		0xC		-
+		0x10	usb_ep_4_setup
+		0x14	usb_ep_4_shutdown
+		0x18	usb_func_array_3_18
+		0x1C	-
+		0x20	-
+		0x24	usb_func_array_3_24
+		
+	0xFF2879C:
+		pointer to 0x2000 bytes alloced
+	
+	0xFF287A0:
+		set to 0x2000 in usb_unkn_14 (usb_setup_main) -> usb_global_something now
+		passed in as a param to serial_print_12 (0x0FF16814)
+		has a function wrapper (usb_get_0xFF287A0)
+	
+	0xFF287A4:
+		set to 1 in usb_unkn_14 (usb_setup_main) -> usb_global_something now
+		
+	0xFF287A8-0xFF287B4:
+		some communication related struct. set up by 0x0FF165B0
+	
+	0xFF287B8:
+		random value
+	
+	0xFF287C0:
+		pointer to 0x2000 bytes alloced
+	
+	... (more jank in usb_unkn_15 (usb_setup_main)) -> usb_global_something now
+	
+	0xFF287EC-??:
+		struct of some kind
+	
+	=== 0xFF28E00 range ===
+	
+	0xFF28E80:
+		zeroed in usb_setup_main_2
+		num function array addresses stored at 0xFF28E90+
+	
+	0xFF28E84:
+		useless?
+		something to do with usb address, but i don't think that it is actually used.
+		set to 3,4 and 5 in different spots, but never actually read.
+	
+	0xFF28E88:
+		current usb configuration in use
+	
+	0xFF28E8C:
+		memaligned (64 byte block) and zeroed buffer of size given by 0xFF287A0 (0x2000)
+		-> used for ep 0 in buffer
+	
+	0xFF28E90-94: array of pointers to arrays of functions
+			-> appears as if these two arrays are mutually exclusive for indexes
+			-> cycles through the arrays until it finds the one with the functions
+		0x90: pointer to function array #3 (0xFF28774)
+		0x94: pointer to function array #2 (0xFF28F50)
+		-> all code accessing does some weird look through both arrays. combined version
+		-> of both:
+			0x0		usb_process_setup_packet_class_type
+			0x4		usb_func_array_3_4
+			0x8		-
+			0xC		usb_ep_1_2_shutdown
+			0x10	usb_ep_4_setup
+			0x14	usb_ep_4_shutdown
+			0x18	usb_func_array_3_18
+			0x1C	usb_get_0xFF28FA4
+			0x20	usb_ep_1_2_reset
+			0x24	usb_func_array_3_24
+	
+	0xFF28E98:
+		pointer to the malloced array that 0xFF28F4C points to (equivalent to *0xFF28F4C)
+		
+	0xFF28ECC-D8
+		CommunicationUnkn struct
+		
+	0xFF28EE8:
+		-> trigger 
+		checked against in usb_process_ep_0_out_interrupt
+		pointer to 512 bytes alloced
+		0xFF28F24 also points to this buffer
+	
+	0xFF28EEC:
+		-> trigger for which code to run when isSetupPhaseDone() is false
+		-> weird vendor/class stuff
+		set to 0xFFFFFFFE after ep0 reset irq
+			-> this causes a bunch of code to not run in ep0 interrupt processing
+		set to 0xFFFFFFFF in ep0 handler after usb setup packet vendor is hit
+		set to 0 or 1? in setup packet->class based on wIndex of a setup packet
+	
+	0xFF28EF0:
+		last read setup packet
+	
+	0xFF28EFC:
+		-> is high speed
+		essentially just a cached version of the usb_is_high_speed call set after enum done
+		
+	
+	=== 0xFF28F00 range ===
+	
+	0xFF28F00-0C:
+		CommunicationUnkn struct
+	
+	0xFF28F10-1C:
+		CommunicationUnkn struct
+	
+	0xFF28F20: isPerformingEnumeration
+		set to 1 before usb_setup is called (usb_switch_with_many_functions)
+		set to 0 when enumeration is done (usb_setup_main_2)
+		set to 1 when all eps are shutdown (usb_switch_with_many_functions)
+		-> probably not necessary since it is never read from
+		
+	0xFF28F24:
+		pointer to 512 bytes alloced
+		0xFF28EE8 also points to this
+	
+	0xFF28F40:
+		pointer to an allocated pointer to an allocated block of memory
+		0xFF28F40 -> [allocated uint32_t w/ address] -> [allocated block]
+		freed in usb_free_memory with free_alloced_pointer
+		-> doesn't seem to be all that necessary, only really used for the communication jank
+		-> possibly one of those unknown communication struct things
+		allocated block:
+			offset	value
+			0x0		checked against 0 in usb_unkn_2 -> renamed
+			0x4		
+			0x8		
+			0xC		
+			0x10	
+			0x14	
+			0x18	
+	
+	0xFF28F44:
+		set to 0 or 1, checked against
+		needs looking into once more functions are named
+		
+	0xFF28F48:
+		set in usb_should_set_up
+		compared to 0 at the start of usb_setup_main
+		-> is_usb_setup type var?
+	
+	0xFF28F4C:
+		pointer to 41 bytes alloced
+		-> set up with values in usb_setup_main
+			0-8	  -> copied from stru_FF24208[0]
+			9-?   -> (something weird)
+			?-?   -> 9 bytes copied from stru_FF24208[1]
+			?-?   -> 9 bytes copied from stru_FF24208[2]
+			27-33 -> usb ep 1 setup constants from stru_FF24223
+			34-40 -> usb ep 2 setup constants from stru_FF24223+7
+		-> address of this stored in 
+	
+	0xFF28F50:	array #2 of usb related functions
+		0x0		-
+		0x4		-
+		0x8		-
+		0xC		usb_ep_1_2_shutdown
+		0x10	-
+		0x14	-
+		0x18	-
+		0x1C	usb_get_0xFF28FA4
+		0x20	usb_ep_1_2_reset
+	
+	0xFF28F78:
+		pointer to memaligned block (block size 64, 512 bytes)
+	
+	0xFF28F7C:
+		pointer to memaligned block (block size 64, 512 bytes)
+	
+	0xFF28FA0:
+		pointer to memaligned block (block size 64, 1024 bytes)
+		-> not used? maybe some ADDS address thing somewhere
+	
+	0xFF28FA4:
+		set to 0 in usb_setup_main
+		set to 0 in some other function
+		has a whole function wrapper for accessing!
+	
+	=== 0xFF2A700 range ===
+	
+	0xFF2A730:	array #1 of usb related functions
+		0x0		usb_setup
+		0x4		usb_stop
+		0x8		usb_set_address
+		0xC		usb_set_or_remove_stall
+		0x10	usb_epcon_set_bit_28
+		0x14	usb_is_ep_active
+		0x18	usb_start_transfer
+		0x1C	usb_setup_ep
+		0x20	usb_clear_ep_config
+		0x24	usb_disable_ep
+		0x28	usb_dctl_set_bits_4_to_6
+		0x2C	usb_is_high_speed
+
+tx fifo addresses:
+	I'm not quite sure how this works, but HPTXFSIZ, GNPTXFSIZ, DPTXFSIZn and DIEPTXFn can
+		all be given addresses... each one has bits 15-0 = startaddr, 31-16 = depth
+	-> creates some queue in hardware at that address?
+	Values:
+		register	startaddr	depth		"end"?
+		GRXFSIZ		0x0			0x011B		0x011A			-> assumed 0x0 startaddr?
+															-> depth written to bits 31-0
+		GNPTXFSIZ	0x011B		0x0100		0x021A
+		DPTXFSIZn	0x021B		0x0100		0x031A-0x0X1A	-> array for 4? different eps
+											
+		
+function mapping:
+	iboot								openiboot equivalent			done
+	usb_is_high_speed					usb_get_speed() == USBHighSpeed	yes
+	usb_is_high_speed_wrapper			N/A								yes
+	usb_clear_ep_config					clearEndpointConfiguration		yes
+	usb_create_mini_array				setupTransfer					yes
+	usb_create_string_descriptor		
+	usb_dctl_set_test_control
+	usb_descriptor_unkn
+	usb_disable_ep						disableEndpoint					yes
+	usb_disable_ep_in					disableEndpointIn				yes
+	usb_disable_ep_wrapper				N/A								yes
+	usb_disable_multiple_ep_in_s5l8900
+	usb_ep_1_2_reset
+	usb_ep_1_2_shutdown
+	usb_ep_4_setup
+	usb_ep_4_shutdown
+	usb_ep_handler_0_in					handleControlSent				
+	usb_ep_handler_0_in_2
+	usb_ep_handler_0_in_3
+	usb_ep_handler_4_out
+	usb_ep_handler_1_in_2_out
+	usb_epcon_set_bit_28
+	usb_flush_tx_fifo					flushTxFifo						yes
+	usb_free_memory						N/A								yes
+	usb_free_memory_2					N/A								yes
+	usb_func_array_3_18
+	usb_func_array_3_24
+	usb_func_array_3_4
+	usb_get_0xFF287A0
+	usb_get_0xFF28FA4
+	usb_get_device_details
+	usb_get_device_id
+	usb_get_manufacturer
+	usb_get_product
+	usb_get_unkn_descriptor_equals_0
+	usb_get_vendor
+	usb_handle_class_type_brequest
+	usb_handle_endpoint_in_interrupt	handleEndpointInInterrupt		yes
+	usb_handle_transfer_completed		handleTransferCompleted			yes
+	usb_irq_handler						usbIRQHandler					framework done
+																		-> some TODOs left
+										->	resetUSB					yes
+										->	handleEndpointOutInterrupt	yes
+										...
+	usb_is_ep_active
+	usb_packet_size_from_speed			getPacketSizeFromSpeed			yes
+	usb_print_char
+	usb_process_ep_0_out_interrupt
+	usb_process_setup_packet_class_type
+	usb_receive							receive							yes
+	usb_receive_control					receiveControl					yes
+	usb_send							send							yes
+	usb_start_transfer					startTransfer					yes
+	usb_start_transfer_wrapper			N/A								yes
+	usb_start_transfer_wrapper_2		N/A								yes
+	usb_send_control_null
+	usb_send_in_nak						sendInNak						yes
+	usb_send_receive_data
+	usb_set_address						setAddress						yes
+	usb_set_or_remove_stall				setStall						yes
+	usb_setup							usb_setup						yes
+	usb_setup_2							usb_setup						yes
+	usb_setup_alloc_stuff				N/A								yes
+	usb_setup_alloc_stuff_2				N/A								yes
+	usb_setup_communication_struct		N/A								yes
+	usb_setup_ep						setupEndpoint					yes
+	usb_setup_ep_wrapper				N/A								yes
+	usb_setup_function_array			N/A								yes
+	usb_setup_function_array_3			N/A								yes
+	usb_setup_globals
+	usb_setup_globals_2
+	usb_setup_main						N/A / usb_setup					yes (missing a couple todos that probably aren't needed)
+	usb_setup_main_2					N/A / usb_setup					yes (missing a couple todos that probably aren't needed)
+	usb_setup_main_wrapper				N/A								yes
+	usb_setup_function_array			N/A								yes
+	usb_setup_transfer_ep_0_in			sendControl						yes
+	usb_shutdown						usb_shutdown					yes
+	usb_shutdown_ep						shutdownEndpoint				yes
+	usb_start							usb_start						yes
+	usb_stop							usb_shutdown					yes
+	usb_store_function_array			N/A								yes
+	usb_switch_with_many_functions										needs MAJOR lookover
+	usb_timer_handler
+	usb_uart_print_char
+	usb_uart_print_char_2
+	usb_uart_print_char_handler
+	usb_uart_printf
+	usb_uart_printf_2
+	usb_uart_unkn_1
+	usb_uart_unkn_2
+	usb_unkn_1
+	usb_unkn_1_wrapper
+	usb_unkn_2
+	usb_unkn_3
+	usb_unkn_4
+	usb_unkn_5
+	usb_unkn_6
+	usb_unkn_7
+	usb_unkn_8
+	usb_unkn_10
+	usb_unkn_11
+	usb_unkn_12
+	usb_unkn_14
+	usb_unkn_15
+	usb_unkn_17
+	usb_unkn_18
+	usb_unkn_19
+	usb_unkn_filesize
+	usb_unkn_receive_file
+	usb_unkn_s5l8900
+	
+function notes:
+	1	see iboot disassem. in my openiboot implementation, I am omitting the writing
+		to bits 11 and 12. It doesn't seem necessary (since it all is
+		dependant on the order in which eps are set up) and seems a bit
+		dangerous to do... If I find any more refs to 0xFF27520:0x24 though, this will
+		probably be necessary for whatever reason.
+		New thinking:
+		MUST BE necessary since it is something to do with dedicated_fifo_enabled...
+		-> 0xFF27520:0x24 has an offset in 0xFF27538 which is passed to usb_flush_tx_fifo
+		layout:
+			0xFF27520:0x24 is index in 0xFF27538 + 1 (1 based)
+			write 1 the offset in 0xFF27538 when enabled, 0 when disabled
+			when enabling, find first offset which is 0 then write 1 and claim.
+		-> used as txfnum (tx fifo number) in epctl!
+		-> in regs only
+
+	2	Things that are different based on HW regs that I really need to look into!:
+			maxTransferSize
+			maxPacketCount

@@ -1,0 +1,7 @@
+NOR:
+	-> uses one spi0 and spi1, determined off of a CHIP ID!!!
+	-> could be weirdly different for MB and MC or something :S
+
+uint8_t * buffer;
+buffer = malloc(152);
+memset(buffer,0,152);

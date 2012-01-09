@@ -1,0 +1,1307 @@
+============================================
+iPod Touch 2G (iBoot 3.1.3):
+============================================
+
+"FIL"
+ROM:0FF1DB97  DCB "failed to load ramdisk file",0xA,0                                
+ROM:0FF1DBAC  DCB "ramdisk file invalid",0xA,0                                       
+ROM:0FF1DBDD  DCB "root filesystem mount failed",0xA,0                               
+ROM:0FF1DFCC  DCB "filesize",0                                                       
+ROM:0FF1E1A0  DCB "filesize variable invalid or not set, aborting",0xA,0             
+ROM:0FF1E50D  DCB "nand_filesys_init",0                                              
+ROM:0FF1F1F5  DCB "[FIL] Disable data whitening",0xA,0                               
+ROM:0FF1FF7B  DCB "[VFL:ERR]  FIL_GetFuncTbl() fail!",0xA,0                          
+ROM:0FF20006  DCB "[FTL:MSG] FIL_Init            [OK]",0xA,0                         
+ROM:0FF20BDE  DCB "'%s' is not a file",0xA,0                                         
+ROM:0FF21688  DCB "File not found, exiting",0xA,0                                    
+ROM:0FF21799  DCB "[FIL:ERR] Error from FMSS sequence (0x%08X)!",0xA,0               
+ROM:0FF217C9  DCB "[FIL:ERR] _resetFMSS() timed out after %d checks with FMSS__CS_S" 
+ROM:0FF21849  DCB "[FIL:ERR] _resetFMSS() timed out after %d checks with FMSS__CS_B" 
+ROM:0FF218A9  DCB "[FIL:ERR] _resetFMSS() timed out waiting for FMC idle after %d c" 
+ROM:0FF2190D  DCB "[FIL:ERR] _clearCSInterrupt() timed out after %d checks with FMS" 
+ROM:0FF21961  DCB "[FIL:ERR] _waitForCSInterrupt() timed out polling for completion" 
+ROM:0FF219D5  DCB "[FIL:ERR] unknown IRQ waiting for CS interrupt (FMSS__CS_IRQ := " 
+ROM:0FF21A1D  DCB "[FIL:ERR] impossible termination waiting for CS interrupt (FMSS_" 
+ROM:0FF21A71  DCB "[FIL:ERR] m2fmssResetAndVerifyIds reads the wrong chip id CS = %" 
+ROM:0FF21ADD  DCB "[FIL:ERR] BUG: unknown value specified for ecc direction.",0xA,0  
+ROM:0FF21B19  DCB "[FIL:ERR] m2fmssReadScatteredPages failed calling _waitForCSInte" 
+ROM:0FF21B61  DCB "[FIL:ERR] m2fmssReadSequentialPages failed calling _waitForCSInt" 
+ROM:0FF21BAD  DCB "[FIL:ERR] failed ResetAndReadId sequence (line:%d)!",0xA,0        
+ROM:0FF21BE5  DCB "[FIL:INF] Found chip id 0x%08x on CS %d.",0xA,0                   
+ROM:0FF21C11  DCB "[FIL:INF] could not find NAND config in the new NAND tables",0xA,0
+ROM:0FF21C51  DCB "[FIL:ERR] failed buffer allocation (line:%d)!",0xA,0              
+ROM:0FF222E8  DCB "WMR_FILL_STRUCT",0                                                
+ROM:0FF226BC  DCB "fs_open: could not allocate mem for file cookie",0xA,0            
+
+"VFL"
+ROM:0FF1E6F6  DCB "[FTL:WRN] VFL_ReadScatteredPagesInVb failed (0x%X, 0x%X, 0x%X); "  
+ROM:0FF1E76A  DCB "[FTL:WRN] VFL_ReadMultiplePagesInVb failed (0x%X, 0x%X); will re"  
+ROM:0FF1E7ED  DCB "[FTL:ERR]  there is error on VFL_Read(line:%d)!",0xA,0             
+ROM:0FF1E81D  DCB "[FTL:ERR] Real ECC ERROR VFL_Read(line:%d) ECC mark is 0x%02X!",0xA
+ROM:0FF1E8CF  DCB "[FTL:ERR]  VFL_Read (dwWrittenLpn(0x%X) != dwLpn(0x%X))!",0xA,0    
+ROM:0FF1F104  DCB "[FTL:ERR]",9,"there is error on VFL_Read(line:%d)!",0xA,0          
+ROM:0FF1F176  DCB "BUF_Get failed in VFL_ReadBlockZeroSignatureNoHeader!",0xA,0       
+ROM:0FF1F19D  DCB "[VFL:ERR] error reading pages from 2nd boot loader area(line:%d)"  
+ROM:0FF1F65B  DCB "drivers/flash_nand/Whimory2_1/Core/VFL/VFLBuffer.c",0              
+ROM:0FF1F811  DCB "[VFL:ERR]  VFL_GetDeviceInfo dwParamType not supported (0x%X) (l"  
+ROM:0FF1F85D  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not supported!",0xA,0             
+ROM:0FF1F891  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not a VFL data struct identifie"  
+ROM:0FF1F8D5  DCB "[VFL:WRN]  VFL_GetStruct 0x%X is not identified is VFL data stru"  
+ROM:0FF1F947  DCB "drivers/flash_nand/Whimory2_1/Core/VFL/VFLInterface.c",0           
+ROM:0FF1F95D  DCB "[VFL:WRN]  VFL_ReadScatteredPagesInVb mark page for refresh (lin"  
+ROM:0FF1F9A5  DCB "[VFL:ERR]  VFL_Read(dwVpn:%d) dwVpn Overflow!",0xA,0               
+ROM:0FF1F9D5  DCB "[VFL:WRN]  VFL_ReadMultiplePagesInVb 0x%X (line:%d)!",0xA,0        
+ROM:0FF1FA0D  DCB "[VFL:ERR]  VFL_ReadBBT(wBank:%d)(line %d) fail!",0xA,0             
+ROM:0FF1FA41  DCB "[VFL:ERR] _LoadVFLCxt(wBank:%d) failed BUF_Get(line:%d)",0xA,0     
+ROM:0FF1FA7D  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) fail bank %d!",0xA,0                
+ROM:0FF1FAAD  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) bank %d!",0xA,0                     
+ROM:0FF1FAD9  DCB "[VFL:ERR]  _LoadVFLCxt(wBank:%d)(line %d) fail!",0xA,0             
+ROM:0FF1FB0D  DCB "[VFL:ERR]  there is no memory to initialize pstVFLCxt!",0xA,0      
+ROM:0FF1FB45  DCB "[VFL:ERR]  there is no memory to initialize pstBBTArea!",0xA,0     
+ROM:0FF1FB81  DCB "[VFL:ERR]  stFPartFunctions.GetLowFuncTbl() fail!",0xA,0           
+ROM:0FF1FBB5  DCB "[VFL:ERR] _pfnConvertC2P is not set (line:%d)!",0xA,0              
+ROM:0FF1FBE5  DCB "[VFL:ERR] _pfnConvertP2C is not set (line:%d)!",0xA,0              
+ROM:0FF1FC15  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not identified is VFL data stru"  
+ROM:0FF1FC65  DCB "[VFL:ERR] _ReadVFLCxtFromFlash VFLCXT version mismatch CS 0x%x :"  
+ROM:0FF1FCB5  DCB "[VFL:WRN]  VFL_ReadMultiplePagesInVb(wVbn:0x%0X) (line:%d) fail!"  
+ROM:0FF1FCF9  DCB "[VFL:ERR]  VFL_ReadBBT(wCS:%d)(line %d) fail!",0xA,0               
+ROM:0FF1FD29  DCB "[VFL:ERR] _LoadVFLCxt(wCS:%d) failed BUF_Get(line:%d)",0xA,0       
+ROM:0FF1FD61  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) fail CS %d!",0xA,0                  
+ROM:0FF1FD8D  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) CW %d!",0xA,0                       
+ROM:0FF1FDB5  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) CS %d!",0xA,0                       
+ROM:0FF1FDDD  DCB "[VFL:ERR] CHECK_VFL_CXT_CHECK_SUM_NO_ASSERT(%d) failed (line:%d)"  
+ROM:0FF1FE21  DCB "[VFL:ERR]  _LoadVFLCxt(wCSIdx:%d)(line %d) fail!",0xA,0            
+ROM:0FF1FED9  DCB "[VFL:ERR]  there is no memory to initialize pstadwScatteredReadP"  
+ROM:0FF1FF5B  DCB "drivers/flash_nand/Whimory2_1/Core/VFL/VSVFLInterface.c",0         
+ROM:0FF1FF71  DCB "[VFL:ERR]  FIL_GetFuncTbl() fail!",0xA,0                           
+ROM:0FF20144  DCB "[FTL:MSG] VSVFL Register  [OK]",0xA,0                              
+ROM:0FF2019D  DCB "[WMR:ERR] Signature Style RESERVEDBLOCK HEADER has to be used wi"  
+ROM:0FF201BA  DCB "[FTL:MSG] VFL Register    [OK]",0xA,0                              
+ROM:0FF20211  DCB "[WMR:ERR] Signature Style BLOCKZERO NOHEADER has to be used with"  
+ROM:0FF20237  DCB "[WMR:ERR] No Valid VFL type found main signature 0x%08X",0xA,0     
+ROM:0FF2026A  DCB "[FTL:MSG] VFL Init            [OK]",0xA,0                          
+ROM:0FF2028E  DCB "[WMR:ERR] VFL_Open failed",0xA,0                                   
+ROM:0FF202AA  DCB "[FTL:MSG] VFL_Open            [OK]",0xA,0                          
+
+"FTL"
+ROM:0FF1E4C1  DCB "NAND FTL failed initialisation",0xA,0                               
+ROM:0FF1E51D  DCB "[FTL:WRN]  FTL_GetStruct 0x%X is not identified as FTL data stru"   
+ROM:0FF1E56D  DCB "[FTL:ERR]  pBuf == NULL!",0xA,0                                     
+ROM:0FF1E589  DCB "[FTL:ERR]  input parameters are invalid!",0xA,0                     
+ROM:0FF1E5B5  DCB "[FTL:ERR] BUF_Get error (line:%d)!",0xA,0                           
+ROM:0FF1E5D9  DCB "[FTL:WRN] _AddLbnToRefreshList (0x%X, 0x%X) (line:%d)!",0xA,0       
+ROM:0FF1E611  DCB "[FTL:WRN] _AddLbnToRefreshList (0x%X, 0x%X, 0x%X) (line:%d)!",0xA,0 
+ROM:0FF1E651  DCB "[FTL:ERR] _FTLRead ECC Mark lbn 0x%X, offset 0x%X, pIdx 0x%X mar"   
+ROM:0FF1E6A9  DCB "[FTL:ERR] address l:0x%08X v:0x%08X cs:0x%02X p:0x%08X (line:%d)"   
+ROM:0FF1E6ED  DCB "[FTL:WRN] VFL_ReadScatteredPagesInVb failed (0x%X, 0x%X, 0x%X); "   
+ROM:0FF1E761  DCB "[FTL:WRN] VFL_ReadMultiplePagesInVb failed (0x%X, 0x%X); will re"   
+ROM:0FF1E7D1  DCB "[FTL:ERR]  there is error on VFL_Read(line:%d)!",0xA,0              
+ROM:0FF1E805  DCB "[FTL:ERR] Real ECC ERROR VFL_Read(line:%d) ECC mark is 0x%02X!",0xA 
+ROM:0FF1E845  DCB "[FTL:ERR]  lbn 0x%X pLog->wVbn 0x%X dataVbn 0x%X offset 0x%X vpn"   
+ROM:0FF1E88D  DCB "[FTL:ERR]  lbn 0x%X dataVbn 0x%X offset 0x%X vpn 0x%X!",0xA,0       
+ROM:0FF1E8C5  DCB "[FTL:ERR]  VFL_Read (dwWrittenLpn(0x%X) != dwLpn(0x%X))!",0xA,0     
+ROM:0FF1E901  DCB "[FTL:ERR] _FTLRead returns FTL_USERDATA_ERROR (line:%d)!",0xA,0     
+ROM:0FF1E93D  DCB "[FTL:ERR] failed calling _FTLRead(0x%08X, 0x%08X, 0x%08X)(line:%"   
+ROM:0FF1E981  DCB "[FTL:ERR] failed BUF_Get (line:%d)!",0xA,0                          
+ROM:0FF1E9CB  DCB "drivers/flash_nand/Whimory2_1/Core/FTL/FTLInterface.c",0            
+ROM:0FF1E9E1  DCB "[FTL:WRN] Recovering NAND Data Structures - this will take some "   
+ROM:0FF1EA29  DCB "[FTL:ERR]  there is error on WMR_MALLOC!",0xA,0                     
+ROM:0FF1EA55  DCB "[FTL:ERR] _FTLRestore found block (#%d) with wLbn %d!",0xA,0        
+ROM:0FF1EA8D  DCB "[FTL:ERR] _FTLRestore found block (#%d) with unidentified spare("   
+ROM:0FF1EAED  DCB "[FTL:ERR] _FTLRestore found block (#%d) with unidentified spare("   
+ROM:0FF1EB41  DCB "[FTL:ERR]  _FTLRestore - # of LOG blcoks > LOG_SECTION_SIZE fail"   
+ROM:0FF1EB9D  DCB "[FTL:ERR]  _FTLRestore - not all free vb were located - disk is "   
+ROM:0FF1EBFD  DCB "[FTL:ERR]  _FTLRestore - pstFTLCxt->pawMapTable[0x%X] = 0x%X - r"   
+ROM:0FF1EC65  DCB "[FTL:ERR]  _FTLRestore - pFTLRestoreStruct[pstFTLCxt->pawMapTabl"   
+ROM:0FF1ECBD  DCB "[FTL:ERR]  pstFTLCxt->pawMapTable[0x%X] = 0x%X - restore is abou"   
+ROM:0FF1ED15  DCB "[FTL:ERR]  _FTLRestore - _ScanForFreeBlk(0x%X) failed - restore "   
+ROM:0FF1ED75  DCB "[FTL:ERR]  _FTLRestore - _ScanLogSection(0x%X) failed - restore "   
+ROM:0FF1EDD5  DCB "[FTL:ERR]  _FTLRestore - IS_LBN_IN_RANGE failed - pFTLRestoreStr"   
+ROM:0FF1EE55  DCB "[FTL:ERR]  _FTLRestore - IS_LBN_IN_RANGE failed - pstFTLCxt->paw"   
+ROM:0FF1EEF9  DCB "[FTL:ERR]  _FTLRestore - pFTLRestoreStruct[0x%X].bSpareType = 0x"   
+ROM:0FF1EF71  DCB "[FTL:ERR]  _FTLRestore - wDataBlkCnt = 0x%X, wFreeBlkCnt = 0x%X",0xA
+ROM:0FF1EFB5  DCB "[FTL:ERR]  _FTLRestore - pstFTLCxt->wNumOfFreeVb = 0x%X, wLogBlk"   
+ROM:0FF1F029  DCB "[FTL:WRN]  _FTLRestore - lost part of the EC Table",0xA,0           
+ROM:0FF1F05D  DCB "[FTL:WRN]  _FTLRestore - lost part of the RC Table",0xA,0           
+ROM:0FF1F091  DCB "[FTL:WRN]  _FTLRestore - lost part of the Stat information",0xA,0   
+ROM:0FF1F0CD  DCB "[FTL:WRN] _FTLRestore OK!",0xA,0                                    
+ROM:0FF1F0E9  DCB "[FTL:ERR]",9,"there is error on VFL_Read(line:%d)!",0xA,0           
+ROM:0FF1F119  DCB "[FTL:ERR] Can not find context!",0xA,0                              
+ROM:0FF1F13D  DCB "[FTL:WRN] Failure running _LoadFTLCxt!",0xA,0                       
+ROM:0FF1F216  DCB "yaFTL::%s(l:%d): Yaftl_read error .mismatch between lpn and meta"   
+ROM:0FF1F26E  DCB "yaFTL::%s(l:%d): cannot allocate %d ",0xA,0                         
+ROM:0FF1F296  DCB "yaFTL::%s(l:%d): we got read failure at x%x block 0x%x block sta"   
+ROM:0FF1F2E2  DCB "yaFTL::%s(l:%d): we got read failure ",0xA,0                        
+ROM:0FF1F30A  DCB "yaFTL::%s(l:%d): were able to overcome read failure ",0xA,0         
+ROM:0FF1F34A  DCB "yaFTL::%s(l:%d): wrong version of CXT %s expected %s",0xA,0         
+ROM:0FF1F382  DCB "yaFTL::%s(l:%d): expected index page %d %d %d",0xA,0                
+ROM:0FF1F3B2  DCB "yaFTL::%s(l:%d): YAFTL_OPEN unsupported low-level format version"   
+ROM:0FF1F406  DCB "yaFTL::%s(l:%d): no of free blocks %d  %d %d",0xA,0                 
+ROM:0FF1F436  DCB "yaFTL::%s(l:%d): CXT is not valid . Performing full NAND R/O res"   
+ROM:0FF1F482  DCB "yaFTL::%s(l:%d): cannot add block to the list",0xA,0                
+ROM:0FF1F4B2  DCB "yaFTL::%s(l:%d): block that does not belong to anything 0x%x  .."   
+ROM:0FF1F50E  DCB "yaFTL::%s(l:%d): index page is unreadable at 0x%x",0xA,0            
+ROM:0FF1F542  DCB "yaFTL::%s(l:%d): ran out of available cache pages on toc entry %"   
+ROM:0FF1F586  DCB "yaFTL::%s(l:%d): can still be enough to mount OS partition",0xA,0   
+ROM:0FF1F5C2  DCB "YAFTL_Open",0                                                       
+ROM:0FF1FF95  DCB "[FTL:MSG] No NAND attached",0xA,0                                   
+ROM:0FF1FFB1  DCB "[FTL:MSG] Apple NAND Driver (AND) RO",0xA,0                         
+ROM:0FF1FFFD  DCB "[FTL:MSG] FIL_Init            [OK]",0xA,0                           
+ROM:0FF20021  DCB "[FTL:MSG] BUF_Init            [OK]",0xA,0                           
+ROM:0FF20045  DCB "[FTL:MSG] FPart Init          [OK]",0xA,0                           
+ROM:0FF200C1  DCB "[FTL:WRN] Incompatible Signature!",0xA,0                            
+ROM:0FF20139  DCB "[FTL:MSG] VSVFL Register  [OK]",0xA,0                               
+ROM:0FF201B1  DCB "[FTL:MSG] VFL Register    [OK]",0xA,0                               
+ROM:0FF20261  DCB "[FTL:MSG] VFL Init            [OK]",0xA,0                           
+ROM:0FF202A1  DCB "[FTL:MSG] VFL_Open            [OK]",0xA,0                           
+ROM:0FF202C5  DCB "[FTL:MSG] YAFTL Register  [OK]",0xA,0                               
+ROM:0FF202E5  DCB "[FTL:MSG] FTL Register    [OK]",0xA,0                               
+ROM:0FF2030E  DCB "[WMR:ERR] FTL Init Fail",0xA,0                                      
+ROM:0FF2032A  DCB "[WMR:ERR] FTL_Open failed",0xA,0                                    
+ROM:0FF2033D  DCB "[FTL:MSG] FTL_Open            [OK]",0xA,0                           
+
+"NAND"
+ROM:0FF1E47C  DCB "nand_read_block_hook: failure %d reading block %u, count %zd",0xA,0
+ROM:0FF1E4BC  DCB "NAND FTL failed initialisation",0xA,0                              
+ROM:0FF1E4ED  DCB "error allocating nand block device",0xA,0                          
+ROM:0FF1E500  DCB "nand0",0                                                           
+ROM:0FF1E508  DCB "nand_filesys_init",0                                               
+ROM:0FF1E9B6  DCB "drivers/flash_nand/Whimory2_1/Core/FTL/FTLInterface.c",0           
+ROM:0FF1E9F5  DCB "[FTL:WRN] Recovering NAND Data Structures - this will take some "  
+ROM:0FF1F468  DCB "yaFTL::%s(l:%d): CXT is not valid . Performing full NAND R/O res"  
+ROM:0FF1F646  DCB "drivers/flash_nand/Whimory2_1/Core/VFL/VFLBuffer.c",0              
+ROM:0FF1F932  DCB "drivers/flash_nand/Whimory2_1/Core/VFL/VFLInterface.c",0           
+ROM:0FF1FF46  DCB "drivers/flash_nand/Whimory2_1/Core/VFL/VSVFLInterface.c",0         
+ROM:0FF1FFA1  DCB "[FTL:MSG] No NAND attached",0xA,0                                  
+ROM:0FF1FFC0  DCB "[FTL:MSG] Apple NAND Driver (AND) RO",0xA,0                        
+ROM:0FF203B5  DCB "AND: NAND initialisation failed due to format mismatch or uninit"  
+ROM:0FF2043A  DCB "[WMR:ERR] NAND format invalid (mismatch, corrupt, read error or "  
+ROM:0FF20F73  DCB "rd=md0 nand-enable-reformat=1 -progress",0                         
+ROM:0FF21C29  DCB "[FIL:INF] could not find NAND config in the new NAND tables",0xA,0 
+ROM:0FF22221  DCB "[NAND] Panic!, %s line %d:",0xA,0                                  
+ROM:0FF2223C  DCB "NAND Panic",0                                                      
+ROM:0FF22249  DCB "[NAND] %s:%d IOCtl on buffer of size %d with %d bytes of src dat"  
+ROM:0FF222B2  DCB "drivers/flash_nand/Whimory2_1/OAM/iBoot/WMROAM.c",0                
+ROM:0FF229A0  DCB "NANDDRIVERSIGN",0                                                  
+
+
+
+
+============================================
+iPhone 2G (iBoot 3.1.3):
+============================================
+
+"FIL"
+ROM:1801F987  DCB "failed to load ramdisk file",0xA,0                    
+ROM:1801F99C  DCB "ramdisk file invalid",0xA,0                           
+ROM:1801F9CD  DCB "root filesystem mount failed",0xA,0                   
+ROM:1801FDBC  DCB "filesize",0                                           
+ROM:1801FF90  DCB "filesize variable invalid or not set, aborting",0xA,0 
+ROM:180200F1  DCB "nand_filesys_init",0                                  
+ROM:18020DD9  DCB "[FIL] Disable data whitening",0xA,0                   
+ROM:18021B5F  DCB "[VFL:ERR]  FIL_GetFuncTbl() fail!",0xA,0              
+ROM:18021BEA  DCB "[FTL:MSG] FIL_Init            [OK]",0xA,0             
+ROM:180227F2  DCB "'%s' is not a file",0xA,0                             
+ROM:18023318  DCB "File not found, exiting",0xA,0                        
+ROM:18023C1C  DCB "WMR_FILL_STRUCT",0                                    
+ROM:18023FF0  DCB "fs_open: could not allocate mem for file cookie",0xA,0
+
+"VFL"
+ROM:180202DA  DCB "[FTL:WRN] VFL_ReadScatteredPagesInVb failed (0x%X, 0x%X, 0x%X); "  
+ROM:1802034E  DCB "[FTL:WRN] VFL_ReadMultiplePagesInVb failed (0x%X, 0x%X); will re"  
+ROM:180203D1  DCB "[FTL:ERR]  there is error on VFL_Read(line:%d)!",0xA,0             
+ROM:18020401  DCB "[FTL:ERR] Real ECC ERROR VFL_Read(line:%d) ECC mark is 0x%02X!",0xA
+ROM:180204B3  DCB "[FTL:ERR]  VFL_Read (dwWrittenLpn(0x%X) != dwLpn(0x%X))!",0xA,0    
+ROM:18020CE8  DCB "[FTL:ERR]",9,"there is error on VFL_Read(line:%d)!",0xA,0          
+ROM:18020D5A  DCB "BUF_Get failed in VFL_ReadBlockZeroSignatureNoHeader!",0xA,0       
+ROM:18020D81  DCB "[VFL:ERR] error reading pages from 2nd boot loader area(line:%d)"  
+ROM:1802123F  DCB "drivers/flash_nand/Whimory2_1/Core/VFL/VFLBuffer.c",0              
+ROM:180213F5  DCB "[VFL:ERR]  VFL_GetDeviceInfo dwParamType not supported (0x%X) (l"  
+ROM:18021441  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not supported!",0xA,0             
+ROM:18021475  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not a VFL data struct identifie"  
+ROM:180214B9  DCB "[VFL:WRN]  VFL_GetStruct 0x%X is not identified is VFL data stru"  
+ROM:1802152B  DCB "drivers/flash_nand/Whimory2_1/Core/VFL/VFLInterface.c",0           
+ROM:18021541  DCB "[VFL:WRN]  VFL_ReadScatteredPagesInVb mark page for refresh (lin"  
+ROM:18021589  DCB "[VFL:ERR]  VFL_Read(dwVpn:%d) dwVpn Overflow!",0xA,0               
+ROM:180215B9  DCB "[VFL:WRN]  VFL_ReadMultiplePagesInVb 0x%X (line:%d)!",0xA,0        
+ROM:180215F1  DCB "[VFL:ERR]  VFL_ReadBBT(wBank:%d)(line %d) fail!",0xA,0             
+ROM:18021625  DCB "[VFL:ERR] _LoadVFLCxt(wBank:%d) failed BUF_Get(line:%d)",0xA,0     
+ROM:18021661  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) fail bank %d!",0xA,0                
+ROM:18021691  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) bank %d!",0xA,0                     
+ROM:180216BD  DCB "[VFL:ERR]  _LoadVFLCxt(wBank:%d)(line %d) fail!",0xA,0             
+ROM:180216F1  DCB "[VFL:ERR]  there is no memory to initialize pstVFLCxt!",0xA,0      
+ROM:18021729  DCB "[VFL:ERR]  there is no memory to initialize pstBBTArea!",0xA,0     
+ROM:18021765  DCB "[VFL:ERR]  stFPartFunctions.GetLowFuncTbl() fail!",0xA,0           
+ROM:18021799  DCB "[VFL:ERR] _pfnConvertC2P is not set (line:%d)!",0xA,0              
+ROM:180217C9  DCB "[VFL:ERR] _pfnConvertP2C is not set (line:%d)!",0xA,0              
+ROM:180217F9  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not identified is VFL data stru"  
+ROM:18021849  DCB "[VFL:ERR] _ReadVFLCxtFromFlash VFLCXT version mismatch CS 0x%x :"  
+ROM:18021899  DCB "[VFL:WRN]  VFL_ReadMultiplePagesInVb(wVbn:0x%0X) (line:%d) fail!"  
+ROM:180218DD  DCB "[VFL:ERR]  VFL_ReadBBT(wCS:%d)(line %d) fail!",0xA,0               
+ROM:1802190D  DCB "[VFL:ERR] _LoadVFLCxt(wCS:%d) failed BUF_Get(line:%d)",0xA,0       
+ROM:18021945  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) fail CS %d!",0xA,0                  
+ROM:18021971  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) CW %d!",0xA,0                       
+ROM:18021999  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) CS %d!",0xA,0                       
+ROM:180219C1  DCB "[VFL:ERR] CHECK_VFL_CXT_CHECK_SUM_NO_ASSERT(%d) failed (line:%d)"  
+ROM:18021A05  DCB "[VFL:ERR]  _LoadVFLCxt(wCSIdx:%d)(line %d) fail!",0xA,0            
+ROM:18021ABD  DCB "[VFL:ERR]  there is no memory to initialize pstadwScatteredReadP"  
+ROM:18021B3F  DCB "drivers/flash_nand/Whimory2_1/Core/VFL/VSVFLInterface.c",0         
+ROM:18021B55  DCB "[VFL:ERR]  FIL_GetFuncTbl() fail!",0xA,0                           
+ROM:18021D28  DCB "[FTL:MSG] VSVFL Register  [OK]",0xA,0                              
+ROM:18021D81  DCB "[WMR:ERR] Signature Style RESERVEDBLOCK HEADER has to be used wi"  
+ROM:18021D9E  DCB "[FTL:MSG] VFL Register    [OK]",0xA,0                              
+ROM:18021DF5  DCB "[WMR:ERR] Signature Style BLOCKZERO NOHEADER has to be used with"  
+ROM:18021E1B  DCB "[WMR:ERR] No Valid VFL type found main signature 0x%08X",0xA,0     
+ROM:18021E4E  DCB "[FTL:MSG] VFL Init            [OK]",0xA,0                          
+ROM:18021E72  DCB "[WMR:ERR] VFL_Open failed",0xA,0                                   
+ROM:18021E8E  DCB "[FTL:MSG] VFL_Open            [OK]",0xA,0                          
+
+"FTL"
+ROM:180200A5  DCB "NAND FTL failed initialisation",0xA,0                               
+ROM:18020101  DCB "[FTL:WRN]  FTL_GetStruct 0x%X is not identified as FTL data stru"   
+ROM:18020151  DCB "[FTL:ERR]  pBuf == NULL!",0xA,0                                     
+ROM:1802016D  DCB "[FTL:ERR]  input parameters are invalid!",0xA,0                     
+ROM:18020199  DCB "[FTL:ERR] BUF_Get error (line:%d)!",0xA,0                           
+ROM:180201BD  DCB "[FTL:WRN] _AddLbnToRefreshList (0x%X, 0x%X) (line:%d)!",0xA,0       
+ROM:180201F5  DCB "[FTL:WRN] _AddLbnToRefreshList (0x%X, 0x%X, 0x%X) (line:%d)!",0xA,0 
+ROM:18020235  DCB "[FTL:ERR] _FTLRead ECC Mark lbn 0x%X, offset 0x%X, pIdx 0x%X mar"   
+ROM:1802028D  DCB "[FTL:ERR] address l:0x%08X v:0x%08X cs:0x%02X p:0x%08X (line:%d)"   
+ROM:180202D1  DCB "[FTL:WRN] VFL_ReadScatteredPagesInVb failed (0x%X, 0x%X, 0x%X); "   
+ROM:18020345  DCB "[FTL:WRN] VFL_ReadMultiplePagesInVb failed (0x%X, 0x%X); will re"   
+ROM:180203B5  DCB "[FTL:ERR]  there is error on VFL_Read(line:%d)!",0xA,0              
+ROM:180203E9  DCB "[FTL:ERR] Real ECC ERROR VFL_Read(line:%d) ECC mark is 0x%02X!",0xA 
+ROM:18020429  DCB "[FTL:ERR]  lbn 0x%X pLog->wVbn 0x%X dataVbn 0x%X offset 0x%X vpn"   
+ROM:18020471  DCB "[FTL:ERR]  lbn 0x%X dataVbn 0x%X offset 0x%X vpn 0x%X!",0xA,0       
+ROM:180204A9  DCB "[FTL:ERR]  VFL_Read (dwWrittenLpn(0x%X) != dwLpn(0x%X))!",0xA,0     
+ROM:180204E5  DCB "[FTL:ERR] _FTLRead returns FTL_USERDATA_ERROR (line:%d)!",0xA,0     
+ROM:18020521  DCB "[FTL:ERR] failed calling _FTLRead(0x%08X, 0x%08X, 0x%08X)(line:%"   
+ROM:18020565  DCB "[FTL:ERR] failed BUF_Get (line:%d)!",0xA,0                          
+ROM:180205AF  DCB "drivers/flash_nand/Whimory2_1/Core/FTL/FTLInterface.c",0            
+ROM:180205C5  DCB "[FTL:WRN] Recovering NAND Data Structures - this will take some "   
+ROM:1802060D  DCB "[FTL:ERR]  there is error on WMR_MALLOC!",0xA,0                     
+ROM:18020639  DCB "[FTL:ERR] _FTLRestore found block (#%d) with wLbn %d!",0xA,0        
+ROM:18020671  DCB "[FTL:ERR] _FTLRestore found block (#%d) with unidentified spare("   
+ROM:180206D1  DCB "[FTL:ERR] _FTLRestore found block (#%d) with unidentified spare("   
+ROM:18020725  DCB "[FTL:ERR]  _FTLRestore - # of LOG blcoks > LOG_SECTION_SIZE fail"   
+ROM:18020781  DCB "[FTL:ERR]  _FTLRestore - not all free vb were located - disk is "   
+ROM:180207E1  DCB "[FTL:ERR]  _FTLRestore - pstFTLCxt->pawMapTable[0x%X] = 0x%X - r"   
+ROM:18020849  DCB "[FTL:ERR]  _FTLRestore - pFTLRestoreStruct[pstFTLCxt->pawMapTabl"   
+ROM:180208A1  DCB "[FTL:ERR]  pstFTLCxt->pawMapTable[0x%X] = 0x%X - restore is abou"   
+ROM:180208F9  DCB "[FTL:ERR]  _FTLRestore - _ScanForFreeBlk(0x%X) failed - restore "   
+ROM:18020959  DCB "[FTL:ERR]  _FTLRestore - _ScanLogSection(0x%X) failed - restore "   
+ROM:180209B9  DCB "[FTL:ERR]  _FTLRestore - IS_LBN_IN_RANGE failed - pFTLRestoreStr"   
+ROM:18020A39  DCB "[FTL:ERR]  _FTLRestore - IS_LBN_IN_RANGE failed - pstFTLCxt->paw"   
+ROM:18020ADD  DCB "[FTL:ERR]  _FTLRestore - pFTLRestoreStruct[0x%X].bSpareType = 0x"   
+ROM:18020B55  DCB "[FTL:ERR]  _FTLRestore - wDataBlkCnt = 0x%X, wFreeBlkCnt = 0x%X",0xA
+ROM:18020B99  DCB "[FTL:ERR]  _FTLRestore - pstFTLCxt->wNumOfFreeVb = 0x%X, wLogBlk"   
+ROM:18020C0D  DCB "[FTL:WRN]  _FTLRestore - lost part of the EC Table",0xA,0           
+ROM:18020C41  DCB "[FTL:WRN]  _FTLRestore - lost part of the RC Table",0xA,0           
+ROM:18020C75  DCB "[FTL:WRN]  _FTLRestore - lost part of the Stat information",0xA,0   
+ROM:18020CB1  DCB "[FTL:WRN] _FTLRestore OK!",0xA,0                                    
+ROM:18020CCD  DCB "[FTL:ERR]",9,"there is error on VFL_Read(line:%d)!",0xA,0           
+ROM:18020CFD  DCB "[FTL:ERR] Can not find context!",0xA,0                              
+ROM:18020D21  DCB "[FTL:WRN] Failure running _LoadFTLCxt!",0xA,0                       
+ROM:18020DFA  DCB "yaFTL::%s(l:%d): Yaftl_read error .mismatch between lpn and meta"   
+ROM:18020E52  DCB "yaFTL::%s(l:%d): cannot allocate %d ",0xA,0                         
+ROM:18020E7A  DCB "yaFTL::%s(l:%d): we got read failure at x%x block 0x%x block sta"   
+ROM:18020EC6  DCB "yaFTL::%s(l:%d): we got read failure ",0xA,0                        
+ROM:18020EEE  DCB "yaFTL::%s(l:%d): were able to overcome read failure ",0xA,0         
+ROM:18020F2E  DCB "yaFTL::%s(l:%d): wrong version of CXT %s expected %s",0xA,0         
+ROM:18020F66  DCB "yaFTL::%s(l:%d): expected index page %d %d %d",0xA,0                
+ROM:18020F96  DCB "yaFTL::%s(l:%d): YAFTL_OPEN unsupported low-level format version"   
+ROM:18020FEA  DCB "yaFTL::%s(l:%d): no of free blocks %d  %d %d",0xA,0                 
+ROM:1802101A  DCB "yaFTL::%s(l:%d): CXT is not valid . Performing full NAND R/O res"   
+ROM:18021066  DCB "yaFTL::%s(l:%d): cannot add block to the list",0xA,0                
+ROM:18021096  DCB "yaFTL::%s(l:%d): block that does not belong to anything 0x%x  .."   
+ROM:180210F2  DCB "yaFTL::%s(l:%d): index page is unreadable at 0x%x",0xA,0            
+ROM:18021126  DCB "yaFTL::%s(l:%d): ran out of available cache pages on toc entry %"   
+ROM:1802116A  DCB "yaFTL::%s(l:%d): can still be enough to mount OS partition",0xA,0   
+ROM:180211A6  DCB "YAFTL_Open",0                                                       
+ROM:18021B79  DCB "[FTL:MSG] No NAND attached",0xA,0                                   
+ROM:18021B95  DCB "[FTL:MSG] Apple NAND Driver (AND) RO",0xA,0                         
+ROM:18021BE1  DCB "[FTL:MSG] FIL_Init            [OK]",0xA,0                           
+ROM:18021C05  DCB "[FTL:MSG] BUF_Init            [OK]",0xA,0                           
+ROM:18021C29  DCB "[FTL:MSG] FPart Init          [OK]",0xA,0                           
+ROM:18021CA5  DCB "[FTL:WRN] Incompatible Signature!",0xA,0                            
+ROM:18021D1D  DCB "[FTL:MSG] VSVFL Register  [OK]",0xA,0                               
+ROM:18021D95  DCB "[FTL:MSG] VFL Register    [OK]",0xA,0                               
+ROM:18021E45  DCB "[FTL:MSG] VFL Init            [OK]",0xA,0                           
+ROM:18021E85  DCB "[FTL:MSG] VFL_Open            [OK]",0xA,0                           
+ROM:18021EA9  DCB "[FTL:MSG] YAFTL Register  [OK]",0xA,0                               
+ROM:18021EC9  DCB "[FTL:MSG] FTL Register    [OK]",0xA,0                               
+ROM:18021EF2  DCB "[WMR:ERR] FTL Init Fail",0xA,0                                      
+ROM:18021F0E  DCB "[WMR:ERR] FTL_Open failed",0xA,0                                    
+ROM:18021F21  DCB "[FTL:MSG] FTL_Open            [OK]",0xA,0                           
+
+"NAND"
+ROM:18020060  DCB "nand_read_block_hook: failure %d reading block %u, count %zd",0xA,0
+ROM:180200A0  DCB "NAND FTL failed initialisation",0xA,0                              
+ROM:180200D1  DCB "error allocating nand block device",0xA,0                          
+ROM:180200E4  DCB "nand0",0                                                           
+ROM:180200EC  DCB "nand_filesys_init",0                                               
+ROM:1802059A  DCB "drivers/flash_nand/Whimory2_1/Core/FTL/FTLInterface.c",0           
+ROM:180205D9  DCB "[FTL:WRN] Recovering NAND Data Structures - this will take some "  
+ROM:1802104C  DCB "yaFTL::%s(l:%d): CXT is not valid . Performing full NAND R/O res"  
+ROM:1802122A  DCB "drivers/flash_nand/Whimory2_1/Core/VFL/VFLBuffer.c",0              
+ROM:18021516  DCB "drivers/flash_nand/Whimory2_1/Core/VFL/VFLInterface.c",0           
+ROM:18021B2A  DCB "drivers/flash_nand/Whimory2_1/Core/VFL/VSVFLInterface.c",0         
+ROM:18021B85  DCB "[FTL:MSG] No NAND attached",0xA,0                                  
+ROM:18021BA4  DCB "[FTL:MSG] Apple NAND Driver (AND) RO",0xA,0                        
+ROM:18021F99  DCB "AND: NAND initialisation failed due to format mismatch or uninit"  
+ROM:1802201E  DCB "[WMR:ERR] NAND format invalid (mismatch, corrupt, read error or "  
+ROM:18022B87  DCB "rd=md0 nand-enable-reformat=1 -progress",0                         
+ROM:18023449  DCB "[NAND] Mismatched device IDs (0x%08x after 0x%08x)",0xA,0          
+ROM:1802347D  DCB "[NAND] No supported NAND found",0xA,0                              
+ROM:1802349D  DCB "[NAND] Device ID           0x%08x",0xA,0                           
+ROM:180234C1  DCB "[NAND] BANKS_TOTAL         %d",0xA,0                               
+ROM:180234E1  DCB "[NAND] BLOCKS_PER_BANK     %d",0xA,0                               
+ROM:18023501  DCB "[NAND] PAGES_PER_BANK      %d",0xA,0                               
+ROM:18023521  DCB "[NAND] SECTORS_PER_PAGE    %d",0xA,0                               
+ROM:18023541  DCB "[NAND] BYTES_PER_SPARE     %d",0xA,0                               
+ROM:18023B55  DCB "[NAND] Panic!, %s line %d:",0xA,0                                  
+ROM:18023B70  DCB "NAND Panic",0                                                      
+ROM:18023B7D  DCB "[NAND] %s:%d IOCtl on buffer of size %d with %d bytes of src dat"  
+ROM:18023BE6  DCB "drivers/flash_nand/Whimory2_1/OAM/iBoot/WMROAM.c",0                
+ROM:18024620  DCB "NANDDRIVERSIGN",0                                                  
+
+
+
+
+
+
+
+============================================
+iPhone 3Gs (iBoot 4.1.0):
+============================================
+
+"FIL"
+ROM:4FF212C3  DCB "failed to load ramdisk file",0xA,0                                 
+ROM:4FF212D8  DCB "ramdisk file invalid",0xA,0                                        
+ROM:4FF21309  DCB "root filesystem mount failed",0xA,0                                
+ROM:4FF2160C  DCB "filesize",0                                                        
+ROM:4FF21704  DCB "filesize variable invalid or not set, aborting",0xA,0              
+ROM:4FF217AD  DCB "CDMA: no AES filter contexts: 0x%08x",0                            
+ROM:4FF21AB2  DCB "[NAND] %s:%d [FIL:ERR] Hardware error: 0x%08x",0xA,0               
+ROM:4FF21AE2  DCB "[NAND] %s:%d [FIL:ERR] Uncorrectable page detected during scatte"  
+ROM:4FF21B3A  DCB "[NAND] %s:%d [FIL:ERR] Hardware error detected during scattered "  
+ROM:4FF21BD2  DCB "[NAND] %s:%d [FIL:DBG]  FNAND_GetStruct 0x%X is not identified a"  
+ROM:4FF21C32  DCB "[NAND] %s:%d [FIL:ERR] FAIL -> %s@%d",0xA,0                        
+ROM:4FF21C5A  DCB "[NAND] %s:%d [FIL] PPN Device Detected",0xA,0                      
+ROM:4FF21C82  DCB "[NAND] %s:%d [FIL:ERR] FMI - No recognized NAND found!",0xA,0      
+ROM:4FF21E06  DCB "[NAND] %s:%d [FIL:ERR] (512 x %d)-byte page size unsupported",0xA,0
+ROM:4FF2320E  DCB "'%s' is not a file",0xA,0                                          
+ROM:4FF24760  DCB "WMR_FILL_STRUCT",0                                                 
+ROM:4FF24978  DCB "File not found, exiting",0xA,0                                     
+ROM:4FF24C50  DCB "fs_open: could not allocate mem for file cookie",0xA,0             
+ROM:4FF24DCD  DCB "nand_filesys_init",0                                               
+ROM:4FF25A99  DCB "[FIL] Disable data whitening",0xA,0                                
+ROM:4FF26983  DCB "[VFL:ERR]  FIL_GetFuncTbl() fail!",0xA,0                           
+ROM:4FF26D1A  DCB "[FTL:MSG] FIL_Init            [OK]",0xA,0                          
+
+"VFL"
+ROM:4FF24FB6  DCB "[FTL:WRN] VFL_ReadScatteredPagesInVb failed (0x%X, 0x%X, 0x%X); "    
+ROM:4FF2502A  DCB "[FTL:WRN] VFL_ReadMultiplePagesInVb failed (0x%X, 0x%X); will re"    
+ROM:4FF250AD  DCB "[FTL:ERR]  there is error on VFL_Read(line:%d)!",0xA,0               
+ROM:4FF250DD  DCB "[FTL:ERR] Real ECC ERROR VFL_Read(line:%d) ECC mark is 0x%02X!",0xA  
+ROM:4FF2518F  DCB "[FTL:ERR]  VFL_Read (dwWrittenLpn(0x%X) != dwLpn(0x%X))!",0xA,0      
+ROM:4FF25914  DCB "[FTL:ERR]",9,"there is error on VFL_Read(line:%d)!",0xA,0            
+ROM:4FF25A5E  DCB "BUF_Get failed in VFL_ReadBlockZeroSignatureNoHeader!",0xA,0         
+ROM:4FF25AB9  DCB "[VFL:WRN] BBT found in CS 0 Block 0... Forcing a failure of %s()"    
+ROM:4FF25AFC  DCB "VFL_VerifyProductionFormat",0                                        
+ROM:4FF26190  DCB "drivers/flash_nand/raw/Whimory/Core/VFL/VFLBuffer.c",0               
+ROM:4FF263AD  DCB "[VFL:ERR]  VFL_GetDeviceInfo dwParamType not supported (0x%X) (l"    
+ROM:4FF263F9  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not supported!",0xA,0               
+ROM:4FF2642D  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not a VFL data struct identifie"    
+ROM:4FF26471  DCB "[VFL:WRN]  VFL_GetStruct 0x%X is not identified is VFL data stru"    
+ROM:4FF264F8  DCB "drivers/flash_nand/raw/Whimory/Core/VFL/VFLInterface.c",0            
+ROM:4FF26545  DCB "[VFL:WRN]  VFL_ReadScatteredPagesInVb mark page for refresh (lin"    
+ROM:4FF2658D  DCB "[VFL:ERR]  VFL_Read(dwVpn:%d) dwVpn Overflow!",0xA,0                 
+ROM:4FF265BD  DCB "[VFL:WRN]  VFL_ReadMultiplePagesInVb 0x%X (line:%d)!",0xA,0          
+ROM:4FF265F5  DCB "[VFL:ERR]  VFL_ReadBBT(wBank:%d)(line %d) fail!",0xA,0               
+ROM:4FF26629  DCB "[VFL:ERR] _LoadVFLCxt(wBank:%d) failed BUF_Get(line:%d)",0xA,0       
+ROM:4FF26665  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) fail bank %d!",0xA,0                  
+ROM:4FF26695  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) bank %d!",0xA,0                       
+ROM:4FF266C1  DCB "[VFL:ERR]  _LoadVFLCxt(wBank:%d)(line %d) fail!",0xA,0               
+ROM:4FF266F5  DCB "[VFL:ERR]  there is no memory to initialize pstVFLCxt!",0xA,0        
+ROM:4FF2672D  DCB "[VFL:ERR]  there is no memory to initialize pstBBTArea!",0xA,0       
+ROM:4FF26769  DCB "[VFL:ERR]  stFPartFunctions.GetLowFuncTbl() fail!",0xA,0             
+ROM:4FF267C1  DCB "[VFL:ERR] _pfnConvertC2P is not set (line:%d)!",0xA,0                
+ROM:4FF267F1  DCB "[VFL:ERR] _pfnConvertP2C is not set (line:%d)!",0xA,0                
+ROM:4FF26821  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not identified is VFL data stru"    
+ROM:4FF26871  DCB "[VFL:ERR] _ReadVFLCxtFromFlash VFLCXT version mismatch CS 0x%x :"    
+ROM:4FF2691C  DCB "drivers/flash_nand/raw/Whimory/Core/VFL/VSVFLInterface.c",0          
+ROM:4FF26935  DCB "[VFL:WRN]  VFL_ReadMultiplePagesInVb(wVbn:0x%0X) (line:%d) fail!"    
+ROM:4FF26979  DCB "[VFL:ERR]  FIL_GetFuncTbl() fail!",0xA,0                             
+ROM:4FF2699D  DCB "[VFL:ERR]  VFL_ReadBBT(wCS:%d)(line %d) fail!",0xA,0                 
+ROM:4FF269CD  DCB "[VFL:ERR] _LoadVFLCxt(wCS:%d) failed BUF_Get(line:%d)",0xA,0         
+ROM:4FF26A05  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) fail CS %d!",0xA,0                    
+ROM:4FF26A31  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) CW %d!",0xA,0                         
+ROM:4FF26A59  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) CS %d!",0xA,0                         
+ROM:4FF26A81  DCB "[VFL:ERR] CHECK_VFL_CXT_CHECK_SUM_NO_ASSERT(%d) failed (line:%d)"    
+ROM:4FF26AC5  DCB "[VFL:ERR]  _LoadVFLCxt(wCSIdx:%d)(line %d) fail!",0xA,0              
+ROM:4FF26B7D  DCB "[VFL:ERR]  there is no memory to initialize pstadwScatteredReadP"    
+ROM:4FF26BF9  DCB "WMR_PANIC: ",0x22,"[VFL:ERR] CS %d Bad Map Table entry %d contains i"
+ROM:4FF26C64  DCB "VFL_Open",0                                                          
+ROM:4FF26C92  DCB "_CheckVFLCxtDataIsUntouched",0                                       
+ROM:4FF26EDC  DCB "[FTL:MSG] VSVFL Register  [OK]",0xA,0                                
+ROM:4FF26F35  DCB "[WMR:ERR] Signature Style RESERVEDBLOCK HEADER has to be used wi"    
+ROM:4FF26FBA  DCB "[FTL:MSG] VFL Register    [OK]",0xA,0                                
+ROM:4FF27011  DCB "[WMR:ERR] Signature Style BLOCKZERO NOHEADER has to be used with"    
+ROM:4FF27037  DCB "[WMR:ERR] No Valid VFL type found main signature 0x%08X",0xA,0       
+ROM:4FF2706A  DCB "[FTL:MSG] VFL Init            [OK]",0xA,0                            
+ROM:4FF2708E  DCB "[WMR:ERR] VFL_Open failed",0xA,0                                     
+ROM:4FF270AA  DCB "[FTL:MSG] VFL_Open            [OK]",0xA,0                            
+
+"FTL"
+ROM:4FF24D89  DCB "Raw NAND FTL failed initialisation",0xA,0                            
+ROM:4FF24DDD  DCB "[FTL:WRN]  FTL_GetStruct 0x%X is not identified as FTL data stru"    
+ROM:4FF24E2D  DCB "[FTL:ERR]  pBuf == NULL!",0xA,0                                      
+ROM:4FF24E49  DCB "[FTL:ERR]  input parameters are invalid!",0xA,0                      
+ROM:4FF24E75  DCB "[FTL:ERR] BUF_Get error (line:%d)!",0xA,0                            
+ROM:4FF24E99  DCB "[FTL:WRN] _AddLbnToRefreshList (0x%X, 0x%X) (line:%d)!",0xA,0        
+ROM:4FF24ED1  DCB "[FTL:WRN] _AddLbnToRefreshList (0x%X, 0x%X, 0x%X) (line:%d)!",0xA,0  
+ROM:4FF24F11  DCB "[FTL:ERR] _FTLRead ECC Mark lbn 0x%X, offset 0x%X, pIdx 0x%X mar"    
+ROM:4FF24F69  DCB "[FTL:ERR] address l:0x%08X v:0x%08X cs:0x%02X p:0x%08X (line:%d)"    
+ROM:4FF24FAD  DCB "[FTL:WRN] VFL_ReadScatteredPagesInVb failed (0x%X, 0x%X, 0x%X); "    
+ROM:4FF25021  DCB "[FTL:WRN] VFL_ReadMultiplePagesInVb failed (0x%X, 0x%X); will re"    
+ROM:4FF25091  DCB "[FTL:ERR]  there is error on VFL_Read(line:%d)!",0xA,0               
+ROM:4FF250C5  DCB "[FTL:ERR] Real ECC ERROR VFL_Read(line:%d) ECC mark is 0x%02X!",0xA  
+ROM:4FF25105  DCB "[FTL:ERR]  lbn 0x%X pLog->wVbn 0x%X dataVbn 0x%X offset 0x%X vpn"    
+ROM:4FF2514D  DCB "[FTL:ERR]  lbn 0x%X dataVbn 0x%X offset 0x%X vpn 0x%X!",0xA,0        
+ROM:4FF25185  DCB "[FTL:ERR]  VFL_Read (dwWrittenLpn(0x%X) != dwLpn(0x%X))!",0xA,0      
+ROM:4FF251C1  DCB "[FTL:ERR] _FTLRead returns FTL_USERDATA_ERROR (line:%d)!",0xA,0      
+ROM:4FF251FD  DCB "[FTL:ERR] failed calling _FTLRead(0x%08X, 0x%08X, 0x%08X)(line:%"    
+ROM:4FF25241  DCB "[FTL:ERR] failed BUF_Get (line:%d)!",0xA,0                           
+ROM:4FF252AC  DCB "drivers/flash_nand/raw/Whimory/Core/FTL/FTLInterface.c",0            
+ROM:4FF252C1  DCB "[FTL:WRN] Recovering NAND Data Structures - this will take some "    
+ROM:4FF25309  DCB "[FTL:ERR] _FTLRestore found block (#%d) with wLbn %d!",0xA,0         
+ROM:4FF25341  DCB "[FTL:ERR] _FTLRestore found block (#%d) with unidentified spare("    
+ROM:4FF253A1  DCB "[FTL:ERR] _FTLRestore found block (#%d) with unidentified spare("    
+ROM:4FF253F5  DCB "[FTL:ERR]  _FTLRestore - # of LOG blocks > LOG_SECTION_SIZE fail"    
+ROM:4FF25451  DCB "[FTL:ERR]  _FTLRestore - not all free vb were located - disk is "    
+ROM:4FF254B1  DCB "[FTL:ERR]  _FTLRestore - pstFTLCxt->pawMapTable[0x%X] = 0x%X - r"    
+ROM:4FF25519  DCB "[FTL:ERR]  _FTLRestore - pFTLRestoreStruct[pstFTLCxt->pawMapTabl"    
+ROM:4FF25571  DCB "[FTL:ERR]  pstFTLCxt->pawMapTable[0x%X] = 0x%X - restore is abou"    
+ROM:4FF255C9  DCB "[FTL:ERR]  _FTLRestore - _ScanForFreeBlk(0x%X) failed - restore "    
+ROM:4FF25629  DCB "[FTL:ERR]  _FTLRestore - _ScanLogSection(0x%X) failed - restore "    
+ROM:4FF25689  DCB "[FTL:ERR]  _FTLRestore - IS_LBN_IN_RANGE failed - pFTLRestoreStr"    
+ROM:4FF25709  DCB "[FTL:ERR]  _FTLRestore - IS_LBN_IN_RANGE failed - pstFTLCxt->paw"    
+ROM:4FF257AD  DCB "[FTL:ERR]  _FTLRestore - pFTLRestoreStruct[0x%X].bSpareType = 0x"    
+ROM:4FF25825  DCB "[FTL:ERR]  _FTLRestore - wDataBlkCnt = 0x%X, wFreeBlkCnt = 0x%X",0xA 
+ROM:4FF25869  DCB "[FTL:ERR]  _FTLRestore - pstFTLCxt->wNumOfFreeVb = 0x%X, wLogBlk"    
+ROM:4FF258DD  DCB "[FTL:WRN] _FTLRestore OK!",0xA,0                                     
+ROM:4FF258F9  DCB "[FTL:ERR]",9,"there is error on VFL_Read(line:%d)!",0xA,0            
+ROM:4FF25929  DCB "[FTL:ERR] Can not find context!",0xA,0                               
+ROM:4FF2594D  DCB "[FTL:WRN] Failure running _LoadFTLCxt!",0xA,0                        
+ROM:4FF25974  DCB "FTL_NUM_PAGES_TO_WRITE_IN_STORECXT < PAGES_PER_SUBLK",0              
+ROM:4FF259E4  DCB "FTL_Init",0                                                          
+ROM:4FF25B1A  DCB "yaFTL::%s(l:%d): we got read failure at x%x block 0x%x block sta"    
+ROM:4FF25B6E  DCB "yaFTL::%s(l:%d): we got read failure ",0xA,0                         
+ROM:4FF25B96  DCB "yaFTL::%s(l:%d): were able to overcome read failure ",0xA,0          
+ROM:4FF25BDB  DCB "[NAND] %s:%d Yaftl_read error .mismatch between lpn and metadata"    
+ROM:4FF25C52  DCB "yaFTL::%s(l:%d): cannot allocate %d ",0xA,0                          
+ROM:4FF25C87  DCB "[NAND] %s:%d yaFTL found two blocks (%d, %d) with the same weave"    
+ROM:4FF25CCE  DCB "yaFTL::%s(l:%d): wrong version of CXT %s expected %s",0xA,0          
+ROM:4FF25D13  DCB "[NAND] %s:%d yaFTL restoreIndexBlock on a non-index block %d... "    
+ROM:4FF25D5B  DCB "!yaftl_init_done",0                                                  
+ROM:4FF25D90  DCB "drivers/flash_nand/raw/Whimory/Core/FTL/yaFTL.c",0                   
+ROM:4FF25DAA  DCB "WMR_PANIC: ",0x22,"yaFTL meta struct size (%d) not equal to bytes pe"
+ROM:4FF25DF2  DCB "yaFTL::%s(l:%d): YAFTL_OPEN unsupported low-level format version"    
+ROM:4FF25E46  DCB "yaFTL::%s(l:%d): CXT is not valid . Performing full NAND R/O res"    
+ROM:4FF25EBE  DCB "yaFTL::%s(l:%d): block that does not belong to anything 0x%x  .."    
+ROM:4FF25F1A  DCB "yaFTL::%s(l:%d): could not allocate enough memory for the restor"    
+ROM:4FF25F5E  DCB "yaFTL::%s(l:%d): index page is unreadable at 0x%x",0xA,0             
+ROM:4FF25F92  DCB "yaFTL::%s(l:%d): ran out of available cache pages on toc entry %"    
+ROM:4FF25FD6  DCB "yaFTL::%s(l:%d): can still be enough to mount OS partition",0xA,0    
+ROM:4FF26012  DCB "YAFTL_Open",0                                                        
+ROM:4FF26092  DCB "YAFTL_Init",0                                                        
+ROM:4FF260FC  DCB "drivers/flash_nand/raw/Whimory/Core/FTL/yaFTL_BTOC.c",0              
+ROM:4FF26CA9  DCB "[FTL:MSG] No NAND attached",0xA,0                                    
+ROM:4FF26CC5  DCB "[FTL:MSG] Apple NAND Driver (AND) RO",0xA,0                          
+ROM:4FF26D11  DCB "[FTL:MSG] FIL_Init            [OK]",0xA,0                            
+ROM:4FF26D35  DCB "[FTL:MSG] BUF_Init            [OK]",0xA,0                            
+ROM:4FF26D59  DCB "[FTL:MSG] FPart Init          [OK]",0xA,0                            
+ROM:4FF26DD5  DCB "[FTL:WRN] Incompatible Signature!",0xA,0                             
+ROM:4FF26DF9  DCB "[FTL:ERR] metadata whitening mismatch, please reformat",0xA,0        
+ROM:4FF26ED1  DCB "[FTL:MSG] VSVFL Register  [OK]",0xA,0                                
+ROM:4FF26FB1  DCB "[FTL:MSG] VFL Register    [OK]",0xA,0                                
+ROM:4FF27061  DCB "[FTL:MSG] VFL Init            [OK]",0xA,0                            
+ROM:4FF270A1  DCB "[FTL:MSG] VFL_Open            [OK]",0xA,0                            
+ROM:4FF270C5  DCB "[FTL:MSG] YAFTL Register  [OK]",0xA,0                                
+ROM:4FF270E5  DCB "[FTL:MSG] FTL Register    [OK]",0xA,0                                
+ROM:4FF2710E  DCB "[WMR:ERR] FTL Init Fail",0xA,0                                       
+ROM:4FF2712A  DCB "[WMR:ERR] FTL_Open failed",0xA,0                                     
+ROM:4FF2713D  DCB "[FTL:MSG] FTL_Open            [OK]",0xA,0                            
+
+"NAND"
+ROM:4FF21A7D  DCB "[NAND] %s:%d UECC ce %d page 0x%08x",0xA,0                           
+ROM:4FF21AA5  DCB "[NAND] %s:%d [FIL:ERR] Hardware error: 0x%08x",0xA,0                 
+ROM:4FF21AD5  DCB "[NAND] %s:%d [FIL:ERR] Uncorrectable page detected during scatte"    
+ROM:4FF21B2D  DCB "[NAND] %s:%d [FIL:ERR] Hardware error detected during scattered "    
+ROM:4FF21BC5  DCB "[NAND] %s:%d [FIL:DBG]  FNAND_GetStruct 0x%X is not identified a"    
+ROM:4FF21C25  DCB "[NAND] %s:%d [FIL:ERR] FAIL -> %s@%d",0xA,0                          
+ROM:4FF21C4D  DCB "[NAND] %s:%d [FIL] PPN Device Detected",0xA,0                        
+ROM:4FF21C75  DCB "[NAND] %s:%d [FIL:ERR] FMI - No recognized NAND found!",0xA,0        
+ROM:4FF21D0E  DCB "h2fmi_get_nand_layout",0                                             
+ROM:4FF21D84  DCB "_initRawNand",0                                                      
+ROM:4FF21D92  DCB "h2fmi_nand_read_id",0                                                
+ROM:4FF21DA6  DCB "h2fmi_nand_reset",0                                                  
+ROM:4FF21DF9  DCB "[NAND] %s:%d [FIL:ERR] (512 x %d)-byte page size unsupported",0xA,0  
+ROM:4FF21E39  DCB "[NAND] Found Chip ID %02X %02X %02X %02X %02X %02X on FMI%d:CE%d"    
+ROM:4FF21E7D  DCB "[NAND] Ignoring mismatched Chip ID %02X %02X %02X %02X %02X %02X"    
+ROM:4FF21F12  DCB "h2fmi_nand_reset_all",0                                              
+ROM:4FF2201B  DCB "WMR_PANIC: ",0x22,"Timeout waiting for CDMA during successful NAND r"
+ROM:4FF22115  DCB "[NAND] %s:%d Timeout waiting for DMA: channel=%d",0xA,0              
+ROM:4FF22195  DCB "[NAND] %s:%d WMR_DMA_START_ASYNC_FAILED: direction=%d, channel=%"    
+ROM:4FF22541  DCB "[NAND] %s:%d Failed to find NAND property: %s",0xA,0                 
+ROM:4FF22731  DCB "[NAND] %s:%d No NAND Detected",0xA,0                                 
+ROM:4FF22751  DCB "[NAND] %s:%d Chip IDs not identical!",0xA,0                          
+ROM:4FF22779  DCB "[NAND] %s:%d Chip IDs not symmetrical!",0xA,0                        
+ROM:4FF227A1  DCB "[NAND] %s:%d Unknown Chip ID!",0xA,0                                 
+ROM:4FF227C1  DCB "[NAND] %s:%d Board support not found!",0xA,0                         
+ROM:4FF227E9  DCB "[NAND] %s:%d Nand timing not found!",0xA,0                           
+ROM:4FF22813  DCB "addNandProperty",0                                                   
+ROM:4FF22824  DCB "findNandInfo",0                                                      
+ROM:4FF23733  DCB "rd=md0 nand-enable-reformat=1 -progress",0                           
+ROM:4FF243AC  DCB "nand0",0                                                             
+ROM:4FF2466D  DCB "[NAND] %s:%d IOCtl on buffer of size %d with %d bytes of src dat"    
+ROM:4FF246D2  DCB "drivers/flash_nand/OAM/iBoot/WMROAM.c",0                             
+ROM:4FF247CA  DCB "drivers/flash_nand/OAM/iBoot/WMRBuf.c",0                             
+ROM:4FF24D40  DCB "nand_read_block_hook: failure %d reading block %u, count %zd",0xA,0  
+ROM:4FF24D84  DCB "Raw NAND FTL failed initialisation",0xA,0                            
+ROM:4FF24DB5  DCB "error allocating nand block device",0xA,0                            
+ROM:4FF24DC8  DCB "nand_filesys_init",0                                                 
+ROM:4FF25296  DCB "drivers/flash_nand/raw/Whimory/Core/FTL/FTLInterface.c",0            
+ROM:4FF252D5  DCB "[FTL:WRN] Recovering NAND Data Structures - this will take some "    
+ROM:4FF25BCD  DCB "[NAND] %s:%d Yaftl_read error .mismatch between lpn and metadata"    
+ROM:4FF25C29  DCB "[NAND] %s:%d Unknown block type: 0x%x",0xA,0                         
+ROM:4FF25C79  DCB "[NAND] %s:%d yaFTL found two blocks (%d, %d) with the same weave"    
+ROM:4FF25D05  DCB "[NAND] %s:%d yaFTL restoreIndexBlock on a non-index block %d... "    
+ROM:4FF25D7A  DCB "drivers/flash_nand/raw/Whimory/Core/FTL/yaFTL.c",0                   
+ROM:4FF25E78  DCB "yaFTL::%s(l:%d): CXT is not valid . Performing full NAND R/O res"    
+ROM:4FF260E6  DCB "drivers/flash_nand/raw/Whimory/Core/FTL/yaFTL_BTOC.c",0              
+ROM:4FF2617A  DCB "drivers/flash_nand/raw/Whimory/Core/VFL/VFLBuffer.c",0               
+ROM:4FF264E2  DCB "drivers/flash_nand/raw/Whimory/Core/VFL/VFLInterface.c",0            
+ROM:4FF26906  DCB "drivers/flash_nand/raw/Whimory/Core/VFL/VSVFLInterface.c",0          
+ROM:4FF26CB5  DCB "[FTL:MSG] No NAND attached",0xA,0                                    
+ROM:4FF26CD4  DCB "[FTL:MSG] Apple NAND Driver (AND) RO",0xA,0                          
+ROM:4FF26E3A  DCB "[WMR:ERR] NAND format invalid (mismatch, corrupt, read error or "    
+ROM:4FF26F6F  DCB "[WMR:MSG] Metadata whitening is set in NAND signature",0xA,0         
+ROM:4FF271B5  DCB "AND: NAND initialisation failed due to format mismatch or uninit"    
+ROM:4FF28370  DCB "NANDDRIVERSIGN",0                                                    
+
+
+
+
+
+
+============================================
+iPhone 4 (iBoot 4.1.0):
+============================================
+
+"FIL"
+ROM:5FF2D157  DCB "failed to load ramdisk file",0xA,0                               
+ROM:5FF2D16C  DCB "ramdisk file invalid",0xA,0                                      
+ROM:5FF2D19D  DCB "root filesystem mount failed",0xA,0                              
+ROM:5FF2D4B4  DCB "filesize",0                                                      
+ROM:5FF2D5AC  DCB "filesize variable invalid or not set, aborting",0xA,0            
+ROM:5FF2D655  DCB "CDMA: no AES filter contexts: 0x%08x",0                          
+ROM:5FF2D9DA  DCB 0x46 ; F                                                          
+ROM:5FF2DA0A  DCB 0x46 ; F                                                          
+ROM:5FF2DA62  DCB 0x46 ; F                                                          
+ROM:5FF2DAFA  DCB "[NAND] %s:%d [FIL:DBG]  FNAND_GetStruct 0x%X is not identified a"
+ROM:5FF2DB5A  DCB "[NAND] %s:%d [FIL:ERR] FAIL -> %s@%d",0xA,0                      
+ROM:5FF2DB82  DCB "[NAND] %s:%d [FIL] PPN Device Detected",0xA,0                    
+ROM:5FF2DD8A  DCB "[NAND] %s:%d [FIL:ERR] FMI - No recognized NAND found!",0xA,0    
+ROM:5FF2F4AA  DCB "drivers/apple/h2fmi/H2fmi_ppn_fil.c",0                           
+ROM:5FF2F4BE  DCB 0x46 ; F                                                          
+ROM:5FF2F4F2  DCB 0x46 ; F                                                          
+ROM:5FF2F52A  DCB 0x46 ; F                                                          
+ROM:5FF2F556  DCB 0x46 ; F                                                          
+ROM:5FF2F59C  DCB "WMR_PANIC: ",0x22,"Invalid PPN FIL command: %d",0x22," %s:%u",0  
+ROM:5FF30424  DCB "fill_pages_with_ptab",0                                          
+ROM:5FF30ED2  DCB 0x66 ; f                                                          
+ROM:5FF32598  DCB "WMR_FILL_STRUCT",0                                               
+ROM:5FF327B0  DCB "File not found, exiting",0xA,0                                   
+ROM:5FF32A88  DCB "fs_open: could not allocate mem for file cookie",0xA,0           
+ROM:5FF32CD1  DCB "nand_filesys_init",0                                             
+ROM:5FF34C41  DCB "NULL != _fil",0                                                  
+ROM:5FF34EDD  DCB "[NAND] %s:%d FIL_Init  [OK]",0xA,0                               
+ROM:5FF35D85  DCB "[FIL] Disable data whitening",0xA,0                              
+ROM:5FF36477  DCB "[VFL:ERR]  FIL_GetFuncTbl() fail!",0xA,0                         
+ROM:5FF3680E  DCB "[FTL:MSG] FIL_Init            [OK]",0xA,0                        
+
+"VFL"
+ROM:5FF32E80  DCB "[PPNVFL:WRN] Read: failed to locate special blocks (type = 0x%X)"    
+ROM:5FF330A4  DCB "[PPNVFL:ERR] no support for the special block handler (type = 0x"    
+ROM:5FF3390F  DCB "drivers/flash_nand/ppn/WhimoryPPN/Core/VFL/VFLBuffer.c",0            
+ROM:5FF33B8B  DCB "drivers/flash_nand/ppn/WhimoryPPN/Core/VFL/PPNVFLInterface.c",0      
+ROM:5FF33BA8  DCB "[PPNVFL:ERR]  _ppnvflSetStruct 0x%X is not identified is VFL dat"    
+ROM:5FF33C00  DCB "[PPNVFL:ERR] more than one block to replace in the vfl cxt (0x%0"    
+ROM:5FF33C50  DCB "[PPNVFL:WRN] vfl cxt block replacement - found a vfl cxt block i"    
+ROM:5FF33CD4  DCB "[PPNVFL:ERR]  scrub list is full bank 0x%X (line:%d)!",0xA,0         
+ROM:5FF33D2C  DCB "[PPNVFL:WRN] status 0x%X marking vflcxt block for scrubbing(bank"    
+ROM:5FF33D8C  DCB "[PPNVFL:WRN] failed _programVFLCxtPage mcxt->r_gen.need_rewrite "    
+ROM:5FF33DE0  DCB "[PPNVFL:ERR] Error reading both cxt copies status 0x%X spareType"    
+ROM:5FF33E70  DCB "WMR_PANIC: ",0x22,"_ppnvflGetStruct not handling dwStructType 0x%08x"
+ROM:5FF33EAC  DCB "[PPNVFL:ERR] could not find a single copy of VFLCxt (l:%d)",0xA,0    
+ROM:5FF33EE8  DCB "[PPNVFL:ERR] could not find a single copy of VFLCxt (bank:0x%X) "    
+ROM:5FF33F30  DCB "[PPNVFL:WRN] could not find cxt in bubble search",0xA,0              
+ROM:5FF33F64  DCB "[PPNVFL:WRN] deteteced vfl cxt pages with user data errors (l:%d"    
+ROM:5FF33FA8  DCB "[PPNVFL:WRN] Error reading both cxt copies(line:%d)",0xA,0           
+ROM:5FF33FE0  DCB "[PPNVFL:WRN] unable to find current copy in the block (line:%d)",0xA 
+ROM:5FF34024  DCB "[PPNVFL:WRN] Error _findOnNANDCxt() (line:%d)",0xA,0                 
+ROM:5FF34054  DCB "[PPNVFL:WRN] Error _readVFLCxtPage(bank=%d, %d) (line:%d)",0xA,0     
+ROM:5FF340CC  DCB "[PPNVFL:ERR] validate_mapping[%d] = %d (l:%d)",0xA,0                 
+ROM:5FF340FC  DCB "[PPNVFL:ERR] failure to allocate g_ppnvflMain (line:%d)",0           
+ROM:5FF34134  DCB "[PPNVFL:ERR] _ppnvflInit num_channels 0x%X ces_per_channel 0x%X "    
+ROM:5FF341A1  DCB "mcxt->dev.num_channels <= PPNVFL_MAX_SUPPORTED_BANKS",0              
+ROM:5FF341DC  DCB "[PPNVFL:WRN] Changing PPNVFL Cxt blocks pair ()",0xA,0               
+ROM:5FF34210  DCB "[PPNVFL:ERR] failed allocating buf (line:%d)",0xA,0                  
+ROM:5FF34240  DCB "[PPNVFL:WRN] failed erase vflcxt block (bank:0x%04X, block: 0x%0"    
+ROM:5FF342A4  DCB "[PPNVFL:ERR] failed erase vflcxt block (bank:0x%04X, block: 0x%0"    
+ROM:5FF3430C  DCB "[PPNVFL:WRN] failed _programCxtLastPage inside _copyVFLCxtToOthe"    
+ROM:5FF34360  DCB "[PPNVFL:ERR] failed _readVFLCxtPage inside _copyVFLCxtToOtherPai"    
+ROM:5FF343B0  DCB "[PPNVFL:WRN] failed _programVFLCxtPage inside _copyVFLCxtToOther"    
+ROM:5FF34404  DCB "[PPNVFL:ERR] failed _programVFLCxtPage but no blocks in scrub li"    
+ROM:5FF34454  DCB "[PPNVFL:ERR] failed finding a bank to provide vfl cxt blocks (li"    
+ROM:5FF344A0  DCB "[PPNVFL:ERR] failed _readVFLCxtPage (line:%d)!",0xA,0                
+ROM:5FF344D0  DCB "[PPNVFL:WRN] failed testing replacement block (bank:0x%X, block:"    
+ROM:5FF34524  DCB "[PPNVFL:ERR] failed searching for replacement block (bank:0x%X, "    
+ROM:5FF3457C  DCB "[PPNVFL:ERR] failed erase new vfl block (bank:0x%04X, block: 0x%"    
+ROM:5FF345E0  DCB "[PPNVFL:ERR] _programVFLCxtPage failed while allocating new vfl "    
+ROM:5FF34650  DCB "[PPNVFL:ERR] _programVFLCxtPage failed with the new vfl block (b"    
+ROM:5FF346B8  DCB "[PPNVFL:WRN] replacing cxt_idx 0x%X, org (bank:0x%X, block:0x%X)"    
+ROM:5FF34724  DCB "[PPNVFL:ERR] failed marking vflcxt block (bank:0x%04X, block: 0x"    
+ROM:5FF34780  DCB "[PPNVFL:ERR] need to replace flag is set but nothing is marked f"    
+ROM:5FF347E8  DCB "[PPNVFL:ERR]  fail _markBlockForReplacementNoProgram (bank:0x%X)"    
+ROM:5FF34838  DCB "[PPNVFL:WRN] reporting a read error status = 0x%X actions:0x%X v"    
+ROM:5FF34894  DCB "[PPNVFL:WRN] bank:0x%X, block:0x%X, page_offset:0x%X, slc:0x%X",0xA  
+ROM:5FF348D4  DCB "[PPNVFL:WRN] channel:0x%X, chip_enable_idx:0x%X, page_address:0x"    
+ROM:5FF34918  DCB "[PPNVFL:WRN] meta: %02X%02X%02X%02X %02X%02X%02X%02X %02X%02X%02"    
+ROM:5FF34970  DCB "[PPNVFL:WRN] *result_flags:0x%X (line:%d)",0xA,0                     
+ROM:5FF3499C  DCB "[PPNVFL:WRN] st vpn      ba blk  ofs s ch ce page        meta (l"    
+ROM:5FF349E8  DCB "[PPNVFL:WRN] %02X %08X %02X %04X %03X %01X %02X %02X %08X    %02"    
+ROM:5FF34A97  DCB "PPNVFL:ERR] _ppnvflReadSinglePage fail with op_status 0x%X (l:%d"    
+ROM:5FF34AFC  DCB "_ppnvflGetDeviceInfo",0                                              
+ROM:5FF34B14  DCB "_ppnvflGetStruct",0                                                  
+ROM:5FF34B28  DCB "_ppnvflReadScatteredPagesInVb",0                                     
+ROM:5FF34B48  DCB "_ppnvflOpen",0                                                       
+ROM:5FF34B54  DCB "_ppnvflInit",0                                                       
+ROM:5FF34BF9  DCB "[NAND] %s:%d Unsupported VFL major ver: %d",0xA,0                    
+ROM:5FF34C9F  DCB "WHIMORY_SIGNATURE_VER_PPN_YAFTL_PPNVFL >= _current_signature.whi"    
+ROM:5FF34D05  DCB "NULL != _vfl->GetMinorVersion",0                                     
+ROM:5FF34D29  DCB "[NAND] %s:%d VFL minor version - disk %d sw %d",0xA,0                
+ROM:5FF34DA9  DCB "[NAND] %s:%d VFL_Init [Failed]",0xA,0                                
+ROM:5FF34DC9  DCB "[NAND] %s:%d VFL_Open [Failed]",0xA,0                                
+ROM:5FF34DE9  DCB "[NAND] %s:%d VFL_Open    [OK]",0xA,0                                 
+ROM:5FF35057  DCB "_LookupVFL",0                                                        
+ROM:5FF352A2  DCB "[FTL:WRN] VFL_ReadScatteredPagesInVb failed (0x%X, 0x%X, 0x%X); "    
+ROM:5FF35316  DCB "[FTL:WRN] VFL_ReadMultiplePagesInVb failed (0x%X, 0x%X); will re"    
+ROM:5FF35399  DCB "[FTL:ERR]  there is error on VFL_Read(line:%d)!",0xA,0               
+ROM:5FF353C9  DCB "[FTL:ERR] Real ECC ERROR VFL_Read(line:%d) ECC mark is 0x%02X!",0xA  
+ROM:5FF3547B  DCB "[FTL:ERR]  VFL_Read (dwWrittenLpn(0x%X) != dwLpn(0x%X))!",0xA,0      
+ROM:5FF35C00  DCB "[FTL:ERR]",9,"there is error on VFL_Read(line:%d)!",0xA,0            
+ROM:5FF35D4A  DCB 0x56 ; V                                                              
+ROM:5FF35DA5  DCB "[VFL:WRN] BBT found in CS 0 Block 0... Forcing a failure of %s()"    
+ROM:5FF35DE8  DCB "VFL_VerifyProductionFormat",0                                        
+ROM:5FF35E90  DCB "drivers/flash_nand/raw/Whimory/Core/VFL/VFLBuffer.c",0               
+ROM:5FF35EA1  DCB "[VFL:ERR]  VFL_GetDeviceInfo dwParamType not supported (0x%X) (l"    
+ROM:5FF35EED  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not supported!",0xA,0               
+ROM:5FF35F21  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not a VFL data struct identifie"    
+ROM:5FF35F65  DCB "[VFL:WRN]  VFL_GetStruct 0x%X is not identified is VFL data stru"    
+ROM:5FF35FEC  DCB "drivers/flash_nand/raw/Whimory/Core/VFL/VFLInterface.c",0            
+ROM:5FF36039  DCB "[VFL:WRN]  VFL_ReadScatteredPagesInVb mark page for refresh (lin"    
+ROM:5FF36081  DCB "[VFL:ERR]  VFL_Read(dwVpn:%d) dwVpn Overflow!",0xA,0                 
+ROM:5FF360B1  DCB "[VFL:WRN]  VFL_ReadMultiplePagesInVb 0x%X (line:%d)!",0xA,0          
+ROM:5FF360E9  DCB "[VFL:ERR]  VFL_ReadBBT(wBank:%d)(line %d) fail!",0xA,0               
+ROM:5FF3611D  DCB "[VFL:ERR] _LoadVFLCxt(wBank:%d) failed BUF_Get(line:%d)",0xA,0       
+ROM:5FF36159  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) fail bank %d!",0xA,0                  
+ROM:5FF36189  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) bank %d!",0xA,0                       
+ROM:5FF361B5  DCB "[VFL:ERR]  _LoadVFLCxt(wBank:%d)(line %d) fail!",0xA,0               
+ROM:5FF361E9  DCB "[VFL:ERR]  there is no memory to initialize pstVFLCxt!",0xA,0        
+ROM:5FF36221  DCB "[VFL:ERR]  there is no memory to initialize pstBBTArea!",0xA,0       
+ROM:5FF3625D  DCB "[VFL:ERR]  stFPartFunctions.GetLowFuncTbl() fail!",0xA,0             
+ROM:5FF362B5  DCB "[VFL:ERR] _pfnConvertC2P is not set (line:%d)!",0xA,0                
+ROM:5FF362E5  DCB "[VFL:ERR] _pfnConvertP2C is not set (line:%d)!",0xA,0                
+ROM:5FF36315  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not identified is VFL data stru"    
+ROM:5FF36365  DCB "[VFL:ERR] _ReadVFLCxtFromFlash VFLCXT version mismatch CS 0x%x :"    
+ROM:5FF36410  DCB "drivers/flash_nand/raw/Whimory/Core/VFL/VSVFLInterface.c",0          
+ROM:5FF36429  DCB "[VFL:WRN]  VFL_ReadMultiplePagesInVb(wVbn:0x%0X) (line:%d) fail!"    
+ROM:5FF3646D  DCB "[VFL:ERR]  FIL_GetFuncTbl() fail!",0xA,0                             
+ROM:5FF36491  DCB "[VFL:ERR]  VFL_ReadBBT(wCS:%d)(line %d) fail!",0xA,0                 
+ROM:5FF364C1  DCB "[VFL:ERR] _LoadVFLCxt(wCS:%d) failed BUF_Get(line:%d)",0xA,0         
+ROM:5FF364F9  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) fail CS %d!",0xA,0                    
+ROM:5FF36525  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) CW %d!",0xA,0                         
+ROM:5FF3654D  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) CS %d!",0xA,0                         
+ROM:5FF36575  DCB "[VFL:ERR] CHECK_VFL_CXT_CHECK_SUM_NO_ASSERT(%d) failed (line:%d)"    
+ROM:5FF365B9  DCB "[VFL:ERR]  _LoadVFLCxt(wCSIdx:%d)(line %d) fail!",0xA,0              
+ROM:5FF36671  DCB "[VFL:ERR]  there is no memory to initialize pstadwScatteredReadP"    
+ROM:5FF366ED  DCB "WMR_PANIC: ",0x22,"[VFL:ERR] CS %d Bad Map Table entry %d contains i"
+ROM:5FF36758  DCB "VFL_Open",0                                                          
+ROM:5FF36786  DCB "_CheckVFLCxtDataIsUntouched",0                                       
+ROM:5FF369D0  DCB "[FTL:MSG] VSVFL Register  [OK]",0xA,0                                
+ROM:5FF36A29  DCB "[WMR:ERR] Signature Style RESERVEDBLOCK HEADER has to be used wi"    
+ROM:5FF36AAE  DCB "[FTL:MSG] VFL Register    [OK]",0xA,0                                
+ROM:5FF36B05  DCB "[WMR:ERR] Signature Style BLOCKZERO NOHEADER has to be used with"    
+ROM:5FF36B2B  DCB "[WMR:ERR] No Valid VFL type found main signature 0x%08X",0xA,0       
+ROM:5FF36B5E  DCB "[FTL:MSG] VFL Init            [OK]",0xA,0                            
+ROM:5FF36B82  DCB "[WMR:ERR] VFL_Open failed",0xA,0                                     
+ROM:5FF36B9E  DCB "[FTL:MSG] VFL_Open            [OK]",0xA,0                            
+
+"FTL"
+ROM:5FF33292  DCB "yaFTL::%s(l:%d): we got read failure at x%x block 0x%x block sta"    
+ROM:5FF332E6  DCB "yaFTL::%s(l:%d): we got read failure ",0xA,0                         
+ROM:5FF3330E  DCB "yaFTL::%s(l:%d): were able to overcome read failure ",0xA,0          
+ROM:5FF33353  DCB "[NAND] %s:%d Yaftl_read error .mismatch between lpn and metadata"    
+ROM:5FF333CA  DCB "yaFTL::%s(l:%d): cannot allocate %d ",0xA,0                          
+ROM:5FF333FF  DCB "[NAND] %s:%d yaFTL found two blocks (%d, %d) with the same weave"    
+ROM:5FF33446  DCB "yaFTL::%s(l:%d): wrong version of CXT %s expected %s",0xA,0          
+ROM:5FF3348B  DCB "[NAND] %s:%d yaFTL restoreIndexBlock on a non-index block %d... "    
+ROM:5FF334D3  DCB "!yaftl_init_done",0                                                  
+ROM:5FF3350B  DCB 0x46 ; F                                                              
+ROM:5FF33511  DCB 0x46 ; F                                                              
+ROM:5FF33526  DCB "WMR_PANIC: ",0x22,"yaFTL meta struct size (%d) not equal to bytes pe"
+ROM:5FF3356E  DCB "yaFTL::%s(l:%d): YAFTL_OPEN unsupported low-level format version"    
+ROM:5FF335C2  DCB "yaFTL::%s(l:%d): CXT is not valid . Performing full NAND R/O res"    
+ROM:5FF3363A  DCB "yaFTL::%s(l:%d): block that does not belong to anything 0x%x  .."    
+ROM:5FF33696  DCB "yaFTL::%s(l:%d): could not allocate enough memory for the restor"    
+ROM:5FF336DA  DCB "yaFTL::%s(l:%d): index page is unreadable at 0x%x",0xA,0             
+ROM:5FF3370E  DCB "yaFTL::%s(l:%d): ran out of available cache pages on toc entry %"    
+ROM:5FF33752  DCB "yaFTL::%s(l:%d): can still be enough to mount OS partition",0xA,0    
+ROM:5FF3378E  DCB "YAFTL_Open",0                                                        
+ROM:5FF3380E  DCB "YAFTL_Init",0                                                        
+ROM:5FF3387B  DCB 0x46 ; F                                                              
+ROM:5FF33881  DCB 0x46 ; F                                                              
+ROM:5FF34BD9  DCB "NULL != _ftl",0                                                      
+ROM:5FF34C25  DCB "[NAND] %s:%d Unsupported FTL major ver: %d",0xA,0                    
+ROM:5FF34C98  DCB "WHIMORY_SIGNATURE_VER_PPN_YAFTL_PPNVFL >= _current_signature.whi"    
+ROM:5FF34D55  DCB "NULL != _ftl->GetMinorVersion",0                                     
+ROM:5FF34D79  DCB "[NAND] %s:%d FTL minor version - disk %d sw %d",0xA,0                
+ROM:5FF34E09  DCB "[NAND] %s:%d FTL_Init [Failed]",0xA,0                                
+ROM:5FF34E29  DCB "[NAND] %s:%d FTL_Open [Failed]",0xA,0                                
+ROM:5FF34E49  DCB "[NAND] %s:%d FTL_Open    [OK]",0xA,0                                 
+ROM:5FF3503F  DCB "WMR_PPN_GetFTL",0                                                    
+ROM:5FF35063  DCB "_LookupFTL",0                                                        
+ROM:5FF350AD  DCB "Raw NAND FTL failed initialisation",0xA,0                            
+ROM:5FF350C9  DCB "[FTL:WRN]  FTL_GetStruct 0x%X is not identified as FTL data stru"    
+ROM:5FF35119  DCB "[FTL:ERR]  pBuf == NULL!",0xA,0                                      
+ROM:5FF35135  DCB "[FTL:ERR]  input parameters are invalid!",0xA,0                      
+ROM:5FF35161  DCB "[FTL:ERR] BUF_Get error (line:%d)!",0xA,0                            
+ROM:5FF35185  DCB "[FTL:WRN] _AddLbnToRefreshList (0x%X, 0x%X) (line:%d)!",0xA,0        
+ROM:5FF351BD  DCB "[FTL:WRN] _AddLbnToRefreshList (0x%X, 0x%X, 0x%X) (line:%d)!",0xA,0  
+ROM:5FF351FD  DCB "[FTL:ERR] _FTLRead ECC Mark lbn 0x%X, offset 0x%X, pIdx 0x%X mar"    
+ROM:5FF35255  DCB "[FTL:ERR] address l:0x%08X v:0x%08X cs:0x%02X p:0x%08X (line:%d)"    
+ROM:5FF35299  DCB "[FTL:WRN] VFL_ReadScatteredPagesInVb failed (0x%X, 0x%X, 0x%X); "    
+ROM:5FF3530D  DCB "[FTL:WRN] VFL_ReadMultiplePagesInVb failed (0x%X, 0x%X); will re"    
+ROM:5FF3537D  DCB "[FTL:ERR]  there is error on VFL_Read(line:%d)!",0xA,0               
+ROM:5FF353B1  DCB "[FTL:ERR] Real ECC ERROR VFL_Read(line:%d) ECC mark is 0x%02X!",0xA  
+ROM:5FF353F1  DCB "[FTL:ERR]  lbn 0x%X pLog->wVbn 0x%X dataVbn 0x%X offset 0x%X vpn"    
+ROM:5FF35439  DCB "[FTL:ERR]  lbn 0x%X dataVbn 0x%X offset 0x%X vpn 0x%X!",0xA,0        
+ROM:5FF35471  DCB "[FTL:ERR]  VFL_Read (dwWrittenLpn(0x%X) != dwLpn(0x%X))!",0xA,0      
+ROM:5FF354AD  DCB "[FTL:ERR] _FTLRead returns FTL_USERDATA_ERROR (line:%d)!",0xA,0      
+ROM:5FF354E9  DCB "[FTL:ERR] failed calling _FTLRead(0x%08X, 0x%08X, 0x%08X)(line:%"    
+ROM:5FF3552D  DCB "[FTL:ERR] failed BUF_Get (line:%d)!",0xA,0                           
+ROM:5FF35598  DCB "drivers/flash_nand/raw/Whimory/Core/FTL/FTLInterface.c",0            
+ROM:5FF355AD  DCB "[FTL:WRN] Recovering NAND Data Structures - this will take some "    
+ROM:5FF355F5  DCB "[FTL:ERR] _FTLRestore found block (#%d) with wLbn %d!",0xA,0         
+ROM:5FF3562D  DCB "[FTL:ERR] _FTLRestore found block (#%d) with unidentified spare("    
+ROM:5FF3568D  DCB "[FTL:ERR] _FTLRestore found block (#%d) with unidentified spare("    
+ROM:5FF356E1  DCB "[FTL:ERR]  _FTLRestore - # of LOG blocks > LOG_SECTION_SIZE fail"    
+ROM:5FF3573D  DCB "[FTL:ERR]  _FTLRestore - not all free vb were located - disk is "    
+ROM:5FF3579D  DCB "[FTL:ERR]  _FTLRestore - pstFTLCxt->pawMapTable[0x%X] = 0x%X - r"    
+ROM:5FF35805  DCB "[FTL:ERR]  _FTLRestore - pFTLRestoreStruct[pstFTLCxt->pawMapTabl"    
+ROM:5FF3585D  DCB "[FTL:ERR]  pstFTLCxt->pawMapTable[0x%X] = 0x%X - restore is abou"    
+ROM:5FF358B5  DCB "[FTL:ERR]  _FTLRestore - _ScanForFreeBlk(0x%X) failed - restore "    
+ROM:5FF35915  DCB "[FTL:ERR]  _FTLRestore - _ScanLogSection(0x%X) failed - restore "    
+ROM:5FF35975  DCB "[FTL:ERR]  _FTLRestore - IS_LBN_IN_RANGE failed - pFTLRestoreStr"    
+ROM:5FF359F5  DCB "[FTL:ERR]  _FTLRestore - IS_LBN_IN_RANGE failed - pstFTLCxt->paw"    
+ROM:5FF35A99  DCB "[FTL:ERR]  _FTLRestore - pFTLRestoreStruct[0x%X].bSpareType = 0x"    
+ROM:5FF35B11  DCB "[FTL:ERR]  _FTLRestore - wDataBlkCnt = 0x%X, wFreeBlkCnt = 0x%X",0xA 
+ROM:5FF35B55  DCB "[FTL:ERR]  _FTLRestore - pstFTLCxt->wNumOfFreeVb = 0x%X, wLogBlk"    
+ROM:5FF35BC9  DCB "[FTL:WRN] _FTLRestore OK!",0xA,0                                     
+ROM:5FF35BE5  DCB "[FTL:ERR]",9,"there is error on VFL_Read(line:%d)!",0xA,0            
+ROM:5FF35C15  DCB "[FTL:ERR] Can not find context!",0xA,0                               
+ROM:5FF35C39  DCB "[FTL:WRN] Failure running _LoadFTLCxt!",0xA,0                        
+ROM:5FF35C60  DCB "FTL_NUM_PAGES_TO_WRITE_IN_STORECXT < PAGES_PER_SUBLK",0              
+ROM:5FF35CD0  DCB "FTL_Init",0                                                          
+ROM:5FF35E28  DCB "drivers/flash_nand/raw/Whimory/Core/FTL/yaFTL.c",0                   
+ROM:5FF35E58  DCB "drivers/flash_nand/raw/Whimory/Core/FTL/yaFTL_BTOC.c",0              
+ROM:5FF3679D  DCB "[FTL:MSG] No NAND attached",0xA,0                                    
+ROM:5FF367B9  DCB "[FTL:MSG] Apple NAND Driver (AND) RO",0xA,0                          
+ROM:5FF36805  DCB "[FTL:MSG] FIL_Init            [OK]",0xA,0                            
+ROM:5FF36829  DCB "[FTL:MSG] BUF_Init            [OK]",0xA,0                            
+ROM:5FF3684D  DCB "[FTL:MSG] FPart Init          [OK]",0xA,0                            
+ROM:5FF368C9  DCB "[FTL:WRN] Incompatible Signature!",0xA,0                             
+ROM:5FF368ED  DCB "[FTL:ERR] metadata whitening mismatch, please reformat",0xA,0        
+ROM:5FF369C5  DCB "[FTL:MSG] VSVFL Register  [OK]",0xA,0                                
+ROM:5FF36AA5  DCB "[FTL:MSG] VFL Register    [OK]",0xA,0                                
+ROM:5FF36B55  DCB "[FTL:MSG] VFL Init            [OK]",0xA,0                            
+ROM:5FF36B95  DCB "[FTL:MSG] VFL_Open            [OK]",0xA,0                            
+ROM:5FF36BB9  DCB "[FTL:MSG] YAFTL Register  [OK]",0xA,0                                
+ROM:5FF36BD9  DCB "[FTL:MSG] FTL Register    [OK]",0xA,0                                
+ROM:5FF36C02  DCB "[WMR:ERR] FTL Init Fail",0xA,0                                       
+ROM:5FF36C1E  DCB "[WMR:ERR] FTL_Open failed",0xA,0                                     
+ROM:5FF36C31  DCB "[FTL:MSG] FTL_Open            [OK]",0xA,0                            
+
+"NAND"
+ROM:5FF2D21C  DCB "nand_firmware",0                                                         
+ROM:5FF2D22C  DCB "nand_syscfg",0                                                           
+ROM:5FF2D9A5  DCB 0x4E ; N                                                                  
+ROM:5FF2D9CD  DCB 0x4E ; N                                                                  
+ROM:5FF2D9FD  DCB 0x4E ; N                                                                  
+ROM:5FF2DA55  DCB 0x4E ; N                                                                  
+ROM:5FF2DAED  DCB "[NAND] %s:%d [FIL:DBG]  FNAND_GetStruct 0x%X is not identified a"        
+ROM:5FF2DB4D  DCB "[NAND] %s:%d [FIL:ERR] FAIL -> %s@%d",0xA,0                              
+ROM:5FF2DB75  DCB "[NAND] %s:%d [FIL] PPN Device Detected",0xA,0                            
+ROM:5FF2DB9D  DCB "[NAND] %s:%d PPN device has missing or corrupted firmware",0xA,0         
+ROM:5FF2DBD9  DCB "[NAND] %s:%d Invalid fmi count: %d",0xA,0                                
+ROM:5FF2DBFD  DCB "[NAND] %s:%d h2fmi_ppn_init_channel for channel %d failed!",0xA,0        
+ROM:5FF2DC39  DCB "[NAND] %s:%d Setting normal power mode failed on FMI %d!",0xA,0          
+ROM:5FF2DC75  DCB "[NAND] %s:%d Unable to derive bus timings",0xA,0                         
+ROM:5FF2DCA1  DCB "[NAND] %s:%d rs %d rh %d dc %d ws %d wh %d",0xA,0                        
+ROM:5FF2DCCD  DCB "[NAND] %s:%d PPN Controller Version: %16.16s",0xA,0                      
+ROM:5FF2DCFD  DCB "[NAND] %s:%d Inconsistent PPN controller firmware versions",0xA,0        
+ROM:5FF2DD39  DCB "[NAND] %s:%d PPN Manufacturer ID: %02X %02X %02X %02X %02X %02X",0xA     
+ROM:5FF2DD7D  DCB "[NAND] %s:%d [FIL:ERR] FMI - No recognized NAND found!",0xA,0            
+ROM:5FF2DDB5  DCB 0x4E ; N                                                                  
+ROM:5FF2DE11  DCB 0x4E ; N                                                                  
+ROM:5FF2DED6  DCB "h2fmi_get_nand_layout",0                                                 
+ROM:5FF2DF58  DCB "_initRawNand",0                                                          
+ROM:5FF2DFCE  DCB "h2fmi_nand_read_id",0                                                    
+ROM:5FF2DFE2  DCB "h2fmi_nand_reset",0                                                      
+ROM:5FF2E0D9  DCB "[NAND] Found Chip ID %02X %02X %02X %02X %02X %02X on FMI%d:CE%d"        
+ROM:5FF2E11D  DCB "[NAND] Ignoring mismatched Chip ID %02X %02X %02X %02X %02X %02X"        
+ROM:5FF2E18E  DCB "h2fmi_nand_reset_all",0                                                  
+ROM:5FF2E2AB  DCB 0x4E ; N                                                                  
+ROM:5FF2E439  DCB "[NAND] %s:%d Timeout waiting for DMA: channel=%d",0xA,0                  
+ROM:5FF2E4B9  DCB "[NAND] %s:%d WMR_DMA_START_ASYNC_FAILED: direction=%d, channel=%"        
+ROM:5FF2E58C  DCB "NandRequirementToIFCTRL",0                                               
+ROM:5FF2E5A5  DCB "[NAND] %s:%d Setting index %d (page 0x%08x) status to 0x%02x",0xA,0      
+ROM:5FF2E624  DCB "WMR_PANIC: ",0x22,"Timeout waiting for NAND status: 0x%02x\n",0x22," %s:"
+ROM:5FF2E685  DCB "[NAND] %s:%d Timeout reading operation status in SetDebugData - "        
+ROM:5FF2E6F5  DCB "[NAND] %s:%d Sending SET_DEBUG_DATA to collect Vt distribution o"        
+ROM:5FF2E751  DCB "[NAND] %s:%d Sent command to force GEB",0xA,0                            
+ROM:5FF2E799  DCB "[NAND] %s:%d Unable to set PPN feature 0x%04x: status = 0x%02x",0xA      
+ROM:5FF2E7D9  DCB "[NAND] %s:%d Enabling PPN debug flags 0x%08x on CE %d",0xA,0             
+ROM:5FF2E811  DCB "[NAND] %s:%d set normal power mode failed on ce %d",0xA,0                
+ROM:5FF2E845  DCB "[NAND] %s:%d Timeout waiting for operation status",0xA,0                 
+ROM:5FF2E879  DCB "[NAND] %s:%d Invalid operation status reading PPN device paramet"        
+ROM:5FF2E8C9  DCB "[NAND] %s:%d failure with %s = %d",0xA,0                                 
+ROM:5FF2EC7D  DCB "[NAND] %s:%d pages_per_block:%d != 1 << page_address_bits:%d",0xA,0      
+ROM:5FF2ECBD  DCB "[NAND] %s:%d Unable to get PPN feature 0x%04x: status = 0x%02x",0xA      
+ROM:5FF2ECFD  DCB "[NAND] %s:%d failed CE %d",0xA,0                                         
+ROM:5FF2ED59  DCB "[NAND] %s:%d Attempting to pull RMA data for CE %d page 0x%08x",0xA      
+ROM:5FF2EEAD  DCB "[NAND] %s:%d Timeout getting controller status during program",0         
+ROM:5FF2EEED  DCB "[NAND] %s:%d Timeout waiting for controller status after multi w"        
+ROM:5FF2EF45  DCB "[NAND] %s:%d PPN device reports %d pages failed program",0xA,0           
+ROM:5FF2EF81  DCB "[NAND] %s:%d PPN device reports %d pages pending after program f"        
+ROM:5FF2EFC9  DCB "[NAND] %s:%d PPN device reports %d pages should be retired after"        
+ROM:5FF2F021  DCB 0x4E ; N                                                                  
+ROM:5FF2F061  DCB 0x4E ; N                                                                  
+ROM:5FF2F0A1  DCB 0x4E ; N                                                                  
+ROM:5FF2F0E5  DCB 0x4E ; N                                                                  
+ROM:5FF2F175  DCB 0x4E ; N                                                                  
+ROM:5FF2F1BD  DCB 0x4E ; N                                                                  
+ROM:5FF2F252  DCB "h2fmi_get_nand_status",0                                                 
+ROM:5FF2F425  DCB "[NAND] %s:%d Bank %d reports incorrect PPN firmware version: exp"        
+ROM:5FF2F4B1  DCB 0x4E ; N                                                                  
+ROM:5FF2F4E5  DCB 0x4E ; N                                                                  
+ROM:5FF2F51D  DCB 0x4E ; N                                                                  
+ROM:5FF2F549  DCB 0x4E ; N                                                                  
+ROM:5FF2F5B5  DCB "[NAND] %s:%d Command type 0x%08x failed due to PPN Controller Ge"        
+ROM:5FF2F605  DCB "[NAND] %s:%d Command type 0x%08x failed due to PPN controller st"        
+ROM:5FF2F669  DCB 0x4E ; N                                                                  
+ROM:5FF2F69B  DCB 0x4E ; N                                                                  
+ROM:5FF2FA78  DCB "[ERROR] nand_part_core.c@%d: bad params",0xA,0                           
+ROM:5FF2FAA4  DCB "[ERROR] nand_part_core.c@%d: alloc failed",0xA,0                         
+ROM:5FF2FAD0  DCB "[ERROR] nand_part_core.c@%d: magic on partition table, 0x%08X, d"        
+ROM:5FF2FB38  DCB "[ERROR] nand_part_core.c@%d: major version on partition table, 0"        
+ROM:5FF2FB98  DCB "nand_part_core.c@%d: block %d:%d:%d is dead",0xA,0                       
+ROM:5FF2FBD0  DCB "[ERROR] nand_part_core.c@%d: bad gate - expected:0x%08X; found:0"        
+ROM:5FF2FC18  DCB "[ERROR] nand_part_core.c@%d: bad guards - expected:{0x%02X, 0x%0"        
+ROM:5FF2FC70  DCB "nand_part_core.c@%d: NandPartCemetery * cemetery = %p",0xA,0             
+ROM:5FF2FCA8  DCB "nand_part_core.c@%d:   cemetery->gate  = 0x%08X",0xA,0                   
+ROM:5FF2FCDC  DCB "nand_part_core.c@%d:   cemetery->flags = 0x%02X",0xA,0                   
+ROM:5FF2FD10  DCB "nand_part_core.c@%d:   cemetery->plots = {0x%02X, 0x%02X, 0x%02X"        
+ROM:5FF2FD5C  DCB "nand_part_core.c@%d:                      0x%02X, 0x%02X, 0x%02X"        
+ROM:5FF2FDA8  DCB "nand_part_core.c@%d:                      0x%02X, 0x%02X, 0x%02X"        
+ROM:5FF2FDF4  DCB "nand_part_core.c@%d:   cemetery->locks = {0x%02X, 0x%02X}",0xA,0         
+ROM:5FF2FE38  DCB "[ERROR] nand_part_core.c@%d: some dead are missing from cemetery"        
+ROM:5FF2FE7C  DCB "[ERROR] nand_part_core.c@%d: buffer too small to store diff head"        
+ROM:5FF2FEB8  DCB "nand_part_core.c@%d: diff->header.versionMajor: 0x%08X",0xA,0            
+ROM:5FF2FEF0  DCB "nand_part_core.c@%d: diff->header.versionMinor: 0x%08X",0xA,0            
+ROM:5FF2FF28  DCB "nand_part_core.c@%d: diff->header.generation:   0x%08X",0xA,0            
+ROM:5FF2FF7C  DCB "nand_part_core.c@%d: reading partition tables from boot blocks",0xA      
+ROM:5FF2FFCC  DCB "nand_part_core.c@%d: WARNING: unable to read boot block at %d:%d"        
+ROM:5FF30014  DCB "nand_part_core.c@%d: initializing cemetery state",0xA,0                  
+ROM:5FF300DC  DCB "nand_part_core.c@%d: WARNING: failed erase of %d:%d:%d",0xA,0            
+ROM:5FF30114  DCB "nand_part_core.c@%d: WARNING: failed write to %d:%d:%d:%d",0xA,0         
+ROM:5FF3016B  DCB "mapNandCE",0                                                             
+ROM:5FF30177  DCB "mapNandBlock",0                                                          
+ROM:5FF301C0  DCB "nand_boot_init",0                                                        
+ROM:5FF301E4  DCB "nand_llb",0                                                              
+ROM:5FF30258  DCB "nand_firmware_init",0                                                    
+ROM:5FF3028A  DCB "couldn't open nand nvram device",0xA,0                                   
+ROM:5FF302B1  DCB "[NAND_NVRAM] FAIL -> %s@%d",0xA,0                                        
+ROM:5FF302DA  DCB "drivers/flash_nand/boot/nand_nvram_core.c",0                             
+ROM:5FF3044D  DCB "error allocating NAND syscfg block device",0xA,0                         
+ROM:5FF3047A  DCB "attempted to read nand syscfg at non-zero offset",0xA,0                  
+ROM:5FF3049C  DCB "nand_read_block_hook: failure reading syscfg",0xA,0                      
+ROM:5FF304CD  DCB "[NAND] %s:%d Valid CE bit detected on an invalid landing bit!",0xA,0     
+ROM:5FF3050D  DCB "[NAND] %s:%d Failed to find NAND property: %s",0xA,0                     
+ROM:5FF306FD  DCB "[NAND] %s:%d No NAND Detected",0xA,0                                     
+ROM:5FF3071D  DCB "[NAND] %s:%d Chip IDs not identical!",0xA,0                              
+ROM:5FF30745  DCB "[NAND] %s:%d Chip IDs not symmetrical!",0xA,0                            
+ROM:5FF3076D  DCB "[NAND] %s:%d Unknown Chip ID!",0xA,0                                     
+ROM:5FF3078D  DCB "[NAND] %s:%d Board support not found!",0xA,0                             
+ROM:5FF307B5  DCB "[NAND] %s:%d Nand timing not found!",0xA,0                               
+ROM:5FF307F3  DCB "addNandProperty",0                                                       
+ROM:5FF30804  DCB "findNandInfo",0                                                          
+ROM:5FF313F7  DCB "rd=md0 nand-enable-reformat=1 -progress",0                               
+ROM:5FF31A4C  DCB "unable to write nand nvram",0xA,0                                        
+ROM:5FF31A67  DCB "unable to sync nand nvram",0xA,0                                         
+ROM:5FF32240  DCB "nand0",0                                                                 
+ROM:5FF324A5  DCB "[NAND] %s:%d IOCtl on buffer of size %d with %d bytes of src dat"        
+ROM:5FF3250A  DCB "drivers/flash_nand/OAM/iBoot/WMROAM.c",0                                 
+ROM:5FF32602  DCB "drivers/flash_nand/OAM/iBoot/WMRBuf.c",0                                 
+ROM:5FF32BF0  DCB "nand_read_block_hook: failure %d reading block %u, count %zd",0xA,0      
+ROM:5FF32C41  DCB "error allocating nand block device",0xA,0                                
+ROM:5FF32C57  DCB "***NAND driver is not formatted. Run restore process.***",0xA,0          
+ROM:5FF32CA5  DCB "Unsupported epoch in NAND signature. Run restore process.",0             
+ROM:5FF32CCC  DCB "nand_filesys_init",0                                                     
+ROM:5FF32DA6  DCB "drivers/flash_nand/ppn/WhimoryPPN/Core/FPart/PPNFPart.c",0               
+ROM:5FF33345  DCB "[NAND] %s:%d Yaftl_read error .mismatch between lpn and metadata"        
+ROM:5FF333A1  DCB "[NAND] %s:%d Unknown block type: 0x%x",0xA,0                             
+ROM:5FF333F1  DCB "[NAND] %s:%d yaFTL found two blocks (%d, %d) with the same weave"        
+ROM:5FF3347D  DCB "[NAND] %s:%d yaFTL restoreIndexBlock on a non-index block %d... "        
+ROM:5FF334F2  DCB 0x6E ; n                                                                  
+ROM:5FF335F4  DCB "yaFTL::%s(l:%d): CXT is not valid . Performing full NAND R/O res"        
+ROM:5FF33862  DCB 0x6E ; n                                                                  
+ROM:5FF338F6  DCB "drivers/flash_nand/ppn/WhimoryPPN/Core/VFL/VFLBuffer.c",0                
+ROM:5FF33B72  DCB "drivers/flash_nand/ppn/WhimoryPPN/Core/VFL/PPNVFLInterface.c",0          
+ROM:5FF3403A  DCB "[PPNVFL:WRN] Error _findOnNANDCxt() (line:%d)",0xA,0                     
+ROM:5FF3408D  DCB "[NAND] %s:%d vbn %d of %d",0xA,0                                         
+ROM:5FF34AD9  DCB "[NAND] %s:%d op_status 0x%02x",0xA,0                                     
+ROM:5FF34BA6  DCB "drivers/flash_nand/ppn/WhimoryPPN/Boot/WhimoryBoot.c",0                  
+ROM:5FF34BE1  DCB "[NAND] %s:%d Unsupported VFL major ver: %d",0xA,0                        
+ROM:5FF34C0D  DCB "[NAND] %s:%d Unsupported FTL major ver: %d",0xA,0                        
+ROM:5FF34D1D  DCB "[NAND] %s:%d VFL minor version - disk %d sw %d",0xA,0                    
+ROM:5FF34D6D  DCB "[NAND] %s:%d FTL minor version - disk %d sw %d",0xA,0                    
+ROM:5FF34D9D  DCB "[NAND] %s:%d VFL_Init [Failed]",0xA,0                                    
+ROM:5FF34DBD  DCB "[NAND] %s:%d VFL_Open [Failed]",0xA,0                                    
+ROM:5FF34DDD  DCB "[NAND] %s:%d VFL_Open    [OK]",0xA,0                                     
+ROM:5FF34DFD  DCB "[NAND] %s:%d FTL_Init [Failed]",0xA,0                                    
+ROM:5FF34E1D  DCB "[NAND] %s:%d FTL_Open [Failed]",0xA,0                                    
+ROM:5FF34E3D  DCB "[NAND] %s:%d FTL_Open    [OK]",0xA,0                                     
+ROM:5FF34E5D  DCB "[NAND] %s:%d FAILED: 0x%08x",0xA,0                                       
+ROM:5FF34E7D  DCB "[NAND] %s:%d Apple PPN NAND Driver, Read-Only",0xA,0                     
+ROM:5FF34EAD  DCB "[NAND] %s:%d No NAND device found",0xA,0                                 
+ROM:5FF34ED1  DCB "[NAND] %s:%d FIL_Init  [OK]",0xA,0                                       
+ROM:5FF34F09  DCB "[NAND] %s:%d No signature found.",0xA,0                                  
+ROM:5FF34F2D  DCB "[NAND] %s:%d Signature has invalid magic: 0x%08x",0xA,0                  
+ROM:5FF34F61  DCB "[NAND] %s:%d FPart major ver in signature is %d",0xA,0                   
+ROM:5FF34FC5  DCB "[NAND] %s:%d Device version %d unsupported",0xA,0                        
+ROM:5FF34FF1  DCB "[NAND] %s:%d Unsupported FPart major ver: %d",0xA,0                      
+ROM:5FF350A8  DCB "Raw NAND FTL failed initialisation",0xA,0                                
+ROM:5FF35582  DCB "drivers/flash_nand/raw/Whimory/Core/FTL/FTLInterface.c",0                
+ROM:5FF355C1  DCB "[FTL:WRN] Recovering NAND Data Structures - this will take some "        
+ROM:5FF35E12  DCB "drivers/flash_nand/raw/Whimory/Core/FTL/yaFTL.c",0                       
+ROM:5FF35E42  DCB "drivers/flash_nand/raw/Whimory/Core/FTL/yaFTL_BTOC.c",0                  
+ROM:5FF35E7A  DCB "drivers/flash_nand/raw/Whimory/Core/VFL/VFLBuffer.c",0                   
+ROM:5FF35FD6  DCB "drivers/flash_nand/raw/Whimory/Core/VFL/VFLInterface.c",0                
+ROM:5FF363FA  DCB "drivers/flash_nand/raw/Whimory/Core/VFL/VSVFLInterface.c",0              
+ROM:5FF367A9  DCB "[FTL:MSG] No NAND attached",0xA,0                                        
+ROM:5FF367C8  DCB "[FTL:MSG] Apple NAND Driver (AND) RO",0xA,0                              
+ROM:5FF3692E  DCB "[WMR:ERR] NAND format invalid (mismatch, corrupt, read error or "        
+ROM:5FF36A63  DCB "[WMR:MSG] Metadata whitening is set in NAND signature",0xA,0             
+ROM:5FF36CA9  DCB "AND: NAND initialisation failed due to format mismatch or uninit"        
+ROM:5FF37F10  DCB "NANDDRIVERSIGN",0                                                        
+
+
+
+
+
+
+
+============================================
+iPod Nano 4g:
+============================================
+
+"FIL"
+SDRAM:0807E6BC  DCB "[FIL:ERR] BUG: unknown value specified for ecc direction.",0xA,0    
+SDRAM:0808D0A0  DCB "[FIL:ERR] m2fmssReadPages failed calling _waitForCSInterrupt!",0xA,0
+SDRAM:08093768  DCB "[FIL:ERR] m2fmssWritePages failed calling _waitForCSInterrupt!",0xA 
+SDRAM:080937B0  DCB "[FIL:ERR] m2fmssWritePages failed (line:%d)!",0xA,0                 
+SDRAM:080937E0  DCB "[FIL:ERR] FMSS did not return CE# (line:%d)!",0xA,0                 
+SDRAM:08281CE4  DCB "[FIL:ERR] m2fmssEraseSequentialBlocks failed (line:%d)!",0xA,0      
+SDRAM:08281E10  DCB "[FIL:ERR] m2fmssEraseSingleBlock failed ce %d blk %d",0xA,0         
+SDRAM:08282280  DCB "[FIL:ERR] failed ResetAndReadId sequence (line:%d)!",0xA,0          
+SDRAM:082822B8  DCB "[FIL:INF] Found chip id 0x%08x on CS %d.",0xA,0                     
+SDRAM:082822E4  DCB "[FIL:INF] could not find NAND config in the new NAND tables",0xA,0  
+SDRAM:08282324  DCB "[FIL:ERR] failed buffer allocation (line:%d)!",0xA,0                
+SDRAM:083C5690  DCB "[FIL:ERR] Compare new and old _filInitCmdsAndCEMaskCtrl failure "   
+SDRAM:083C574C  DCB "[FIL:ERR] Error from FMSS sequence (0x%08X)!",0xA,0                 
+SDRAM:083C577C  DCB "[FIL:ERR] _clearCSInterrupt() timed out after %d checks with FMS"   
+SDRAM:083C57D0  DCB "[FIL:ERR] _resetFMSS() timed out after %d checks with FMSS__CS_S"   
+SDRAM:083C582C  DCB "[FIL:ERR] _resetFMSS() timed out after %d checks with FMSS__CS_B"   
+SDRAM:083C588C  DCB "[FIL:ERR] _resetFMSS() timed out waiting for FMC idle after %d c"   
+SDRAM:083C58F0  DCB "[FIL:ERR] _waitForCSInterrupt() timed out waiting for interrupt "   
+SDRAM:083C5964  DCB "[FIL:ERR] unknown IRQ waiting for CS interrupt (FMSS__CS_IRQ := "   
+SDRAM:083C59AC  DCB "[FIL:ERR] m2fmssResetAndVerifyIds reads the wrong chip id CS = %"   
+SDRAM:083C5A18  DCB "[FIL:ERR] m2fmssWriteBLPage failed calling _waitForCSInterrupt!",0xA
+SDRAM:083C5A5C  DCB "[FIL:ERR] m2fmssEraseSingleBlock failed calling _waitForCSInterr"   
+SDRAM:083C5AA4  DCB "[FIL:ERR] m2fmssEraseSequentialBlocks failed calling _waitForCSI"   
+SDRAM:083C5AF0  DCB "[FIL:ERR] m2fmssEraseSequentialBlocks failed but no failing CE f"   
+
+"VFL"
+SDRAM:08069290  DCB "[VFL:ERR]  VFL_ReadBBT(%d) fail!",0xA,0                             
+SDRAM:080692B8  DCB "[VFL:ERR]  BUF_Get fail (line:%d)!",0xA,0                           
+SDRAM:080692DC  DCB "[VFL:ERR]  _ReplaceBadBlk fail!",0xA,0                              
+SDRAM:08069300  DCB "[VFL:ERR]  _StoreVFLCxt fail!",0xA,0                                
+SDRAM:080695D8  DCB "[VFL:ERR]  VFL_ReadBBT(%d) fail!",0xA,0                             
+SDRAM:08069600  DCB "[VFL:ERR]  BUF_Get fail (line:%d)!",0xA,0                           
+SDRAM:08069624  DCB "[VFL:ERR]  wPbn == VFL_LAST_BLK_TO_SEARCH_CXT (line:%d)!",0xA,0     
+SDRAM:08069660  DCB "[VFL:ERR]  _ReplaceBadBlock failed (line:%d)!",0xA,0                
+SDRAM:08069690  DCB "[VFL:ERR]  _StoreVFLCxt fail!",0xA,0                                
+SDRAM:08069854  DCB "[VFL:ERR] _CreateBBT failed allocating buffer for spare",0xA,0      
+SDRAM:08069890  DCB "[VFL:ERR] _CreateBBT failed calling _CheckInitialBad",0xA,0         
+SDRAM:080698C8  DCB "[VFL:ERR] _CreateBBT found %d bad blocks",0xA,0                     
+SDRAM:0806C4D0  DCB "[VFL:ERR] _pfnConvertC2P is not set (line:%d)!",0xA,0               
+SDRAM:0806C544  DCB "[VFL:ERR] _pfnConvertP2C is not set (line:%d)!",0xA,0               
+SDRAM:0806D9C4  DCB "[VFL:ERR] _LoadVFLCxt(wBank:%d) failed BUF_Get(line:%d)",0xA,0      
+SDRAM:0806DA04  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) fail bank %d!",0xA,0                 
+SDRAM:0806DA38  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) bank %d!",0xA,0                      
+SDRAM:0806DBD4  DCB "[VFL:ERR] _LoadVFLCxt(wCS:%d) failed BUF_Get(line:%d)",0xA,0        
+SDRAM:0806DC10  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) fail CS %d!",0xA,0                   
+SDRAM:0806DC40  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) CW %d!",0xA,0                        
+SDRAM:0806DC68  DCB "[VFL:ERR] _LoadVFLCxt(line:%d) CS %d!",0xA,0                        
+SDRAM:0806DF18  DCB "[VFL:ERR] _SetFTLType fail !",0xA,0                                 
+SDRAM:08072498  DCB "[VFL:ERR] _StoreVFLCxt(line:%d) fail bank %d!",0xA,0                
+SDRAM:080724C8  DCB "[VFL:ERR] Fail erasing VFLBlock bank %d block 0x%X (line:%d)",0xA,0 
+SDRAM:08072600  DCB "[VFL:ERR] _StoreVFLCxt(line:%d) fail CS %d!",0xA,0                  
+SDRAM:08072630  DCB "[VFL:ERR] Fail erasing VFLBlock CS %d block 0x%X (line:%d)",0xA,0   
+SDRAM:08078170  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not supported!",0xA,0              
+SDRAM:0807E40C  DCB "[VFL:ERR]  _GetReservedBlk(wBank:%d, wSrcPbn:%d) fail!",0xA,0       
+SDRAM:0807E450  DCB "[VFL:ERR]  there is no reserved block!!!",0xA,0                     
+SDRAM:0807E47C  DCB "[VFL:ERR]  erase fail occured while replacing a bad block!!!",0xA,0 
+SDRAM:0807E550  DCB "[VFL:ERR]  _SetNewFTLType fail !",0xA,0                             
+SDRAM:0808C674  DCB "[VFL:ERR]  Read(wCS:%d) fail!",0xA,0                                
+SDRAM:0808C694  DCB "[VFL:ERR]  Unknown initial bad block algorithm type (0x%x).",0xA,0  
+SDRAM:0808C990  DCB "[VFL:ERR] _ReplaceBadBlock(0x%X, 0x%X) failed (line:%d)",0xA,0      
+SDRAM:0808CA90  DCB "[VFL:ERR]  VFL context write fail !",0xA,0                          
+SDRAM:08099144  DCB "[VFL:ERR] _SetNewNumOfFTLSuBlks fail !",0xA,0                       
+SDRAM:0809D5D8  DCB "[VFL:ERR]  VFL context write fail !",0xA,0                          
+SDRAM:0809D67C  DCB "[VFL:ERR]  VFL context write fail !",0xA,0                          
+SDRAM:0809D7C0  DCB "[VFL:ERR] failed to allocate BBT buffer!",0xA,0                     
+SDRAM:0809D7EC  DCB "[VFL:INF] BBT found for CS %d",0xA,0                                
+SDRAM:0809D810  DCB "[VFL:ERR] Failed erasing CS %d block 0x%X",0xA,0                    
+SDRAM:0809D83C  DCB "[VFL:ERR] Faild erasing block 0",0xA,0                              
+SDRAM:0809D860  DCB "[VFL:ERR]  No BBT found for CS %d",0xA,0                            
+SDRAM:0809D888  DCB "[VFL:ERR]  No factory bad block tables found!",0xA,0                
+SDRAM:0809DA80  DCB "[VFL:ERR] VFL_WriteInitialBBT failed (wBBIdx == 0) CS %d ",0xA,0    
+SDRAM:0809E3E8  DCB "[VFL:ERR] error BUF_Get(line:%d)",0xA,0                             
+SDRAM:0809E5D0  DCB "[VFL:ERR] error BUF_Get(line:%d)",0xA,0                             
+SDRAM:0809E5FC  DCB "[VFL:WRN] Fail writing VFLCxt(line:%d) CS %d block %d page %d",0xA,0
+SDRAM:080AE190  DCB "[VFL:ERR]  _SetNewNumOfFTLSuBlks fail !",0xA,0                      
+SDRAM:080B53D8  DCB "[VFL:ERR] error BUF_Get(line:%d)",0xA,0                             
+SDRAM:080C1D0C  DCB "[VFL:WRN]  VFL_ReadMultiplePagesInVb 0x%X (line:%d)!",0xA,0         
+SDRAM:080C3DCC  DCB "[VFL:WRN]  VFL_WriteMultiplePagesInVb(wVbn:0x%0X) fail!",0xA,0      
+SDRAM:080C6FCC  DCB "[VFL:WRN] invalid CE 0x%X, no marking done (line:%d).",0xA,0        
+SDRAM:080D8FFC  DCB "[VFL:ERR]  there is no memory to initialize pstVFLCxt!",0xA,0       
+SDRAM:080D9034  DCB "[VFL:ERR]  there is no memory to initialize pstBBTArea!",0xA,0      
+SDRAM:080D9070  DCB "[VFL:ERR]  stFPartFunctions.GetLowFuncTbl() fail!",0xA,0            
+SDRAM:080D916C  DCB "[VFL:ERR]  there is no memory to initialize pstVFLCxt!",0xA,0       
+SDRAM:080D91A4  DCB "[VFL:ERR]  FIL_GetFuncTbl() fail!",0xA,0                            
+SDRAM:080D9264  DCB "[VFL:ERR]  VFL_ReadBBT(wBank:%d)(line %d) fail!",0xA,0              
+SDRAM:080D9298  DCB "[VFL:ERR]  _LoadVFLCxt(wBank:%d)(line %d) fail!",0xA,0              
+SDRAM:080D94B0  DCB "[VFL:ERR]  VFL_ReadBBT(wCS:%d)(line %d) fail!",0xA,0                
+SDRAM:080D94E0  DCB "[VFL:ERR]  _LoadVFLCxt(wCSIdx:%d)(line %d) fail!",0xA,0             
+SDRAM:080D96D0  DCB "[VFL:ERR]  VFL_Read(dwVpn:%d) dwVpn Overflow!",0xA,0                
+SDRAM:080D9708  DCB "[VFL:WRN]  Read(0x%X) returns 0x%X fail!",0xA,0                     
+SDRAM:080DF744  DCB "[VFL:ERR]  VFL_Erase(wVbn:%d) input overflow!",0xA,0                
+SDRAM:080DF778  DCB "[VFL:WRN]  VFL_Erase failed erasing pbn 0x%X bank %d!",0xA,0        
+SDRAM:080DF7B8  DCB "[VFL:ERR]  VFL_Erase failed _ReplaceBadBlk",0xA,0                   
+SDRAM:080DF7E4  DCB "[VFL:ERR]  VFL_Erase failed _StoreVFLCxt",0xA,0                     
+SDRAM:080DFB4C  DCB "[VFL:ERR]  VFL_Erase failed _ReplaceBadBlk",0xA,0                   
+SDRAM:080DFB78  DCB "[VFL:ERR]  VFL_Erase failed _StoreVFLCxt",0xA,0                     
+SDRAM:080DFC68  DCB "[VFL:ERR]  VFL_Write(dwVpn:%d) dwVpn Overflow!",0xA,0               
+SDRAM:080DFCA4  DCB "[VFL:WRN]  VFL_Write(dwVpn:%d) failed!",0xA,0                       
+SDRAM:080DFD20  DCB "[VFL:WRN]  VFL_Write(dwVpn:%d) failed!",0xA,0                       
+SDRAM:083C3FE4  DCB "[VFL:ERR] _WriteSpecialBlock failed writing to bank %d, 0x%04X, "   
+SDRAM:083C4038  DCB "[VFL:ERR] _WriteSpecialBlock failed reading from bank %d, 0x%04X"   
+SDRAM:083C408C  DCB "[VFL:ERR] _WriteSpecialBlock failed verifying bank %d, 0x%04X, 0"   
+SDRAM:083C40E0  DCB "[VFL:WRN] VFL_WriteIntialBBT found BBT in Block0, but not Specia"   
+SDRAM:083C412C  DCB "[VFL:ERR] error reading pages from 2nd boot loader area(line:%d)"   
+SDRAM:083C4170  DCB "[VFL:ERR] too many pages to write to the 2nd loader 0x%X (line:%"   
+SDRAM:083C41B4  DCB "[VFL:ERR] VFL_Write2ndBootLoader Fail erasing block 0 (line:%d)",0xA
+SDRAM:083C41F8  DCB "[VFL:ERR] VFL_Write2ndBootLoader Fail writing to block 0 (line:%"   
+SDRAM:083C423C  DCB "[VFL:ERR] VFL_Write2ndBootLoader Fail writing signature to block"   
+SDRAM:083C4E28  DCB "[VFL:WRN] _WriteVFLCxtToFlash failed write (0x%X, 0x%X) (line:%d"   
+SDRAM:083C4E6C  DCB "[VFL:WRN] Fail writing VFLCxt(line:%d) bank %d block %d page %d",0xA
+SDRAM:083C4EB0  DCB "[VFL:ERR]  erase fail occurs when replaces bad block(line:%d)!!!"   
+SDRAM:083C4EF4  DCB "[VFL:WRN]  Meta: %02X%02X%02X%02X %02X%02X%02X%02X %02X%02X%02X%"   
+SDRAM:083C4F54  DCB "[VFL:ERR]  VFL_Erase failed erasing / replacing vbn 0x%X bank %d"   
+SDRAM:083C4F98  DCB "[VFL:WRN]  VFL_ReadScatteredPagesInVb mark page for refresh (lin"   
+SDRAM:083C4FE0  DCB "[VFL:WRN]  VFL_GetStruct 0x%X is not identified is VFL data stru"   
+SDRAM:083C5030  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not a VFL data struct identifie"   
+SDRAM:083C5074  DCB "[VFL:ERR]  VFL_GetDeviceInfo dwParamType not supported (0x%X) (l"   
+SDRAM:083C50C0  DCB "[VFL:WRN] _WriteVFLCxtToFlash failed write (0x%X, 0x%X) (line:%d"   
+SDRAM:083C5104  DCB "[VFL:ERR] _AddBlockToScrubList pVFLCxt->wScrubIdx = %d wCS = %d "   
+SDRAM:083C5150  DCB "[VFL:WRN] Marked write fail block for delete, CE %d, block 0x%X "   
+SDRAM:083C519C  DCB "[VFL:ERR] _RemoveBlockFromScrubList(%d, 0x%X) failed calling _Is"   
+SDRAM:083C51F8  DCB "[VFL:ERR] CHECK_VFL_CXT_CHECK_SUM_NO_ASSERT(%d) failed (line:%d)"   
+SDRAM:083C5284  DCB "[VFL:ERR]  there is no memory to initialize pstadwScatteredReadP"   
+SDRAM:083C52E4  DCB "[VFL:WRN]  VFL_WriteMultiplePagesInVb(wVbn:0x%0X) (line:%d) fail"   
+SDRAM:083C5328  DCB "[VFL:WRN]  EraseMultiple failed but Failing CE and Failing block"   
+SDRAM:083C538C  DCB "[VFL:WRN]  VFL_Erase failed erasing in parallel Vbn 0x%X Pbn 0x%"   
+SDRAM:083C53E4  DCB "[VFL:ERR]  VFL_Erase failed: could not find failing erase block "   
+SDRAM:083C5438  DCB "[VFL:WRN]  VFL_Erase failed after attemting block replacements %"   
+SDRAM:083C5484  DCB "[VFL:WRN]  VFL_Erase failed erasing pbn 0x%X bank %d status = 0x"   
+SDRAM:083C54D4  DCB "[VFL:ERR]  VFL_Erase failed erasing / replacing vbn 0x%X bank %d"   
+SDRAM:083C5518  DCB "[VFL:WRN]  VFL_ReadMultiplePagesInVb(wVbn:0x%0X) (line:%d) fail!"   
+SDRAM:083C555C  DCB "[VFL:WRN]  VFL_ReadScatteredPagesInVb mark page for refresh (lin"   
+SDRAM:083C55A4  DCB "[VFL:WRN]  VFL_GetStruct 0x%X is not identified is VFL data stru"   
+SDRAM:083C55F4  DCB "[VFL:WRN]  VFL_SetStruct 0x%X is not identified is VFL data stru"   
+SDRAM:083C5644  DCB "[VFL:ERR]  VFL_GetDeviceInfo dwParamType not supported (0x%X) (l"
+
+"FTL"
+SDRAM:0802D988             DCB "[FTL:ERR] ANDCall to unsupported function (%d)",0xA,0               
+SDRAM:08061EB0 sub_8061AF4 DCB "[FTL:MSG] Apple NAND Driver (AND) RW",0xA,0                         
+SDRAM:08061F04 sub_8061AF4 DCB "[FTL:MSG] FIL_Init            [OK]",0xA,0                           
+SDRAM:08061F28 sub_8061AF4 DCB "[FTL:MSG] BUF_Init            [OK]",0xA,0                           
+SDRAM:08061F50 sub_8061AF4 DCB "[FTL:MSG] FPart Init          [OK]",0xA,0                           
+SDRAM:08061F78 sub_8061AF4 DCB "[FTL:MSG] read old style signature 0x%08X (line:%d)",0xA,0          
+SDRAM:08061FB0 sub_8061AF4 DCB "[FTL:MSG] read new style signature 0x%08X (line:%d)",0xA,0          
+SDRAM:08061FE8 sub_8061AF4 DCB "[FTL:WRN] Incompatible Signature!",0xA,0                            
+SDRAM:0806200C sub_8061AF4 DCB "[FTL:MSG] VFL Init            [OK]",0xA,0                           
+SDRAM:08062114 sub_8061AF4 DCB "[FTL:MSG] Calling VFL_FactoryReformat()",0xA,0                      
+SDRAM:08062140 sub_8061AF4 DCB "[FTL:MSG] VFL_Format          [OK]",0xA,0                           
+SDRAM:08062168 sub_8061AF4 DCB "[FTL:MSG] FTL Register    [OK]",0xA,0                               
+SDRAM:08062188 sub_8061AF4 DCB "[FTL:ERR] FTL failed Init",0xA,0                                    
+SDRAM:080621A4 sub_8061AF4 DCB "[FTL:MSG] FTL Init        [OK]",0xA,0                               
+SDRAM:080621C4 sub_8061AF4 DCB "[FTL:ERR] FTL failed Formatting",0xA,0                              
+SDRAM:080621E8 sub_8061AF4 DCB "[FTL:MSG] FTL Format      [OK]",0xA,0                               
+SDRAM:08062208 sub_8061AF4 DCB "[FTL:MSG] Write Signature OK 0x%08X",0xA,0                          
+SDRAM:08062230 sub_8061AF4 DCB "[FTL:MSG] Read back Signature Failed 0x%08X",0xA,0                  
+SDRAM:08062370             DCB "[FTL:MSG] Write Signature Failed 0x%08X",0xA,0                      
+SDRAM:0806239C             DCB "[FTL:MSG] Read back Signature OK",0xA,0                             
+SDRAM:080623DC             DCB "[FTL:MSG] VFL_Open            [OK]",0xA,0                           
+SDRAM:08062408             DCB "[FTL:ERR] YAFTL is not supported - init fail",0xA,0                 
+SDRAM:080624A0             DCB "[FTL:MSG] FTL_Open            [OK]",0xA,0                           
+SDRAM:08068090             DCB "[FTL:ERR] FTL_Format failed _EraseAndMarkEC(0x%X) (line:%d)",0xA,0  
+SDRAM:080699C4             DCB "[FTL:ERR]  _GetFreeVb failed wFreeIdx = 0x%X (line:%d)!",0xA,0      
+SDRAM:08069A04             DCB "[FTL:ERR]  _GetFreeVb failed wRetVbn = 0x%X (line:%d)!",0xA,0       
+SDRAM:08069AE4             DCB "[FTL:ERR] _SetFreeVb failed _EraseAndMarkEC(0x%X) (line:%d)",0xA,0  
+SDRAM:08069DB0             DCB "[FTL:MSG] VSVFL Register  [OK]",0xA,0                               
+SDRAM:08069DD4             DCB "[FTL:MSG] VFL Register    [OK]",0xA,0                               
+SDRAM:0806C9E0 sub_806C5CC DCB "[FTL:ERR] BUF_Get error (line:%d)!",0xA,0                           
+SDRAM:0806CA04 sub_806C5CC DCB "[FTL:ERR]  there is error on WMR_MALLOC!",0xA,0                     
+SDRAM:0806CA3C sub_806C5CC DCB "[FTL:ERR] _FTLRestore found block (#%d) with wLbn %d!",0xA,0        
+SDRAM:0806D264             DCB "[FTL:WRN]  _FTLRestore - lost part of the EC Table",0xA,0           
+SDRAM:0806D298             DCB "[FTL:WRN]  _FTLRestore - lost part of the RC Table",0xA,0           
+SDRAM:0806D2CC             DCB "[FTL:WRN]  _FTLRestore - lost part of the Stat information",0xA,0   
+SDRAM:0806D308             DCB "[FTL:ERR] _FTLRestore failed _EraseAndMarkEC(0x%X) (line:%d)",0xA,0 
+SDRAM:0806D34C             DCB "[FTL:WRN] Failure running FTL_Flush after _FTLRestore!",0xA,0       
+SDRAM:0806D384             DCB "[FTL:WRN] _FTLRestore OK!",0xA,0                                    
+SDRAM:0806D7C0 sub_806D3C4 DCB "[FTL:ERR]",9,"there is error on VFL_Read(line:%d)!",0xA,0           
+SDRAM:0806D7F4 sub_806D3C4 DCB "[FTL:ERR] Can not find context!",0xA,0                              
+SDRAM:0806D818 sub_806D3C4 DCB "[FTL:ERR] BUF_Get error (line:%d)!",0xA,0                           
+SDRAM:0806DD88             DCB "[FTL:ERR]  there is error on _Merge!",0xA,0                         
+SDRAM:0806DDB0             DCB "[FTL:ERR]  there is error on _GetFreeVb (line:%d)!",0xA,0           
+SDRAM:08071B64             DCB "[FTL:ERR] failed BUF_Get (line:%d)!",0xA,0                          
+SDRAM:08071B94             DCB "[FTL:ERR] failed _SetFreeVb(0x%X) (line:%d)!",0xA,0                 
+SDRAM:08071E68             DCB "[FTL:ERR] failed _SetFreeVb(0x%X) (line:%d)!",0xA,0                 
+SDRAM:08071E98             DCB "[FTL:ERR] failed BUF_Get (line:%d)!",0xA,0                          
+SDRAM:08071EC4             DCB "[FTL:ERR]  there is error on _GetFreeVb (line:%d)!",0xA,0           
+SDRAM:08071EFC             DCB "[FTL:ERR] _DoMoveMerge failed!",0xA,0                               
+SDRAM:08075F0C             DCB "[FTL:ERR] FTL_WearLevel failed _HandleRefreshBlock() (line:%d)",0xA 
+SDRAM:08075F50             DCB "[FTL:ERR] FTL_WearLevel failed _Merge(NULL) (line:%d)",0xA,0        
+SDRAM:0807DD70             DCB "[FTL:ERR] _AutoWearLevel failed calling _FTLMarkCxtNotValid",0xA,0  
+SDRAM:0807DDBC             DCB "[FTL:ERR]  there is error on VFL_Erase(0x%X) (line:%d)!",0xA,0      
+SDRAM:0807DDF8             DCB "[FTL:WRN] _MoveD2F Failed (line:%d)!",0xA,0                         
+SDRAM:0807DE9C             DCB "[FTL:ERR] failed BUF_Get (line:%d)!",0xA,0                          
+SDRAM:0807E15C             DCB "[FTL:ERR]  there is error on _GetFreeVb (line:%d)!",0xA,0           
+SDRAM:0807E190             DCB "[FTL:ERR] failed calling _FTLRead(0x%X, 0x%X, 0x%X)(line:%d)",0xA,0 
+SDRAM:0807E1D0             DCB "[FTL:ERR] failed calling _FTLRead(0x%X, 0x%X, 0x%X) (line:%d)",0xA,0
+SDRAM:0807E210             DCB "[FTL:WRN] _DoSimpleMerge error writing to free page",0xA,0          
+SDRAM:0807E248             DCB "[FTL:ERR] _DoSimpleMerge failed _SetFreeVb(0x%X) (line:%d)",0xA,0   
+SDRAM:0807E284             DCB "[FTL:ERR] _DoSimpleMerge failed!",0xA,0                             
+SDRAM:08099038             DCB "[FTL:ERR] BUF_Get error (line:%d)!",0xA,0                           
+SDRAM:0809DDB8             DCB "[FTL:ERR] BUF_Get error (line:%d)!",0xA,0                           
+SDRAM:0809DDE0             DCB "[FTL:ERR] Error invalidating the Index (line:%d)!",0xA,0            
+SDRAM:0809DF3C             DCB "[FTL:WRN] _HandleRefreshBlock failed _DoSimpleMerge (line:%d)",0xA,0
+SDRAM:0809DF7C             DCB "[FTL:WRN] _HandleRefreshBlock failed _GetFreeVb (line:%d)",0xA,0    
+SDRAM:0809DFB8             DCB "[FTL:WRN] _HandleRefreshBlock failed _MoveD2F (line:%d)",0xA,0      
+SDRAM:080D3264             DCB "[FTL:ERR] _Merge failed calling _FTLMarkCxtNotValid",0xA,0          
+SDRAM:080D32A8             DCB "[FTL:ERR]  _Merge error(line:%d)!",0xA,0                            
+SDRAM:080D32D0             DCB "[FTL:ERR]  there is error on _DoMoveMerge!",0xA,0                   
+SDRAM:080D32FC             DCB "[FTL:ERR]  there is error on _DoCopyMerge!",0xA,0                   
+SDRAM:080D3328             DCB "[FTL:ERR]  there is error on _DoSimpleMerge!",0xA,0                 
+SDRAM:080D8238             DCB "[FTL:WRN] Failure running _LoadFTLCxt!",0xA,0                       
+SDRAM:080D9C30 sub_80D9838 DCB "[FTL:ERR]  pBuf == NULL!",0xA,0                                     
+SDRAM:080D9C50 sub_80D9838 DCB "[FTL:ERR]  input parameters are invalid!",0xA,0                     
+SDRAM:080D9C84 sub_80D9838 DCB "[FTL:ERR] BUF_Get error (line:%d)!",0xA,0                           
+SDRAM:080D9CAC sub_80D9838 DCB "[FTL:WRN] _AddLbnToRefreshList (0x%X, 0x%X) (line:%d)!",0xA,0       
+SDRAM:080D9CE4 sub_80D9838 DCB "[FTL:WRN] _AddLbnToRefreshList (0x%X, 0x%X, 0x%X) (line:%d)!",0xA,0 
+SDRAM:080D9D34 sub_80D9838 DCB "[FTL:ERR] Real ECC ERROR VFL_Read(line:%d) ECC mark is 0x%02X!",0xA 
+SDRAM:080D9E74             DCB "[FTL:ERR]  lbn 0x%X dataVbn 0x%X offset 0x%X vpn 0x%X!",0xA,0       
+SDRAM:080D9EAC             DCB "[FTL:ERR]  VFL_Read (dwWrittenLpn(0x%X) != dwLpn(0x%X))!",0xA,0     
+SDRAM:080D9EEC             DCB "[FTL:ERR]  there is error on VFL_Read(line:%d)!",0xA,0              
+SDRAM:080D9F24             DCB "[FTL:ERR] _FTLRead returns FTL_USERDATA_ERROR (line:%d)!",0xA,0     
+SDRAM:080DA128             DCB "[FTL:ERR] failed calling _FTLRead(0x%X, 0x%X, 0x%X) (line:%d)",0xA,0
+SDRAM:080DA168             DCB "[FTL:WRN] _MoveD2F error running VFL_Erase(0x%X) (line:%d)!",0xA,0  
+SDRAM:080DD1D8             DCB "[FTL:ERR]  pabDataBuf == NULL!",0xA,0                               
+SDRAM:080DD1F8             DCB "[FTL:ERR]  input parameters are invalid!",0xA,0                     
+SDRAM:080DD228             DCB "[FTL:ERR] FTL_Write failed calling _FTLMarkCxtNotValid",0xA,0       
+SDRAM:080DD260             DCB "[FTL:ERR]  there is error on _Merge!",0xA,0                         
+SDRAM:080DD290             DCB "[FTL:ERR]  there is error on _GetFreeVb (line:%d)!",0xA,0           
+SDRAM:080DD2C8             DCB "[FTL:ERR] FTL_Write failed _SetFreeVb(0x%X) (line:%d)",0xA,0        
+SDRAM:080DD300             DCB "[FTL:ERR]  there is error on _PrepareLog!",0xA,0                    
+SDRAM:083C428C             DCB "[FTL:ERR]  _GetFreeVb failed wFreeVbListTail = 0x%X, pstFTLCxt->"   
+SDRAM:083C42EC             DCB "[FTL:ERR] _PrepareNextMapCxtPage failed _GetFreeVb(0x%X) (line:%"   
+SDRAM:083C4330             DCB "[FTL:ERR] _PrepareNextMapCxtPage failed _SetFreeVb(0x%X) (line:%"   
+SDRAM:083C4374             DCB "[FTL:ERR] _PrepareNextMapCxtPage failed _EraseAndMarkEC(0x%X) (l"   
+SDRAM:083C43C0             DCB "[FTL:WRN] _StoreFTLCxt failed running VFL_WriteMultiplePagesInVb"   
+SDRAM:083C4404             DCB "[FTL:WRN]  FTL_GetStruct 0x%X is not identified as FTL data stru"   
+SDRAM:083C4454             DCB "[FTL:WRN]  _AddLbnToRefreshList(0x%X, 0x%X) failed adding new bl"   
+SDRAM:083C44C0             DCB "[FTL:ERR] _FTLRead ECC Mark lbn 0x%X, offset 0x%X, pIdx 0x%X mar"   
+SDRAM:083C4518             DCB "[FTL:ERR] address l:0x%08X v:0x%08X cs:0x%02X p:0x%08X (line:%d)"   
+SDRAM:083C455C             DCB "[FTL:WRN] VFL_ReadScatteredPagesInVb failed (0x%X, 0x%X, 0x%X); "   
+SDRAM:083C45D0             DCB "[FTL:WRN] VFL_ReadMultiplePagesInVb failed (0x%X, 0x%X); will re"   
+SDRAM:083C4640             DCB "[FTL:ERR]  lbn 0x%X pLog->wVbn 0x%X dataVbn 0x%X offset 0x%X vpn"   
+SDRAM:083C4688             DCB "[FTL:WRN] _MoveD2F failed moving the data block to a new block!",0xA
+SDRAM:083C46CC             DCB "[FTL:ERR] _AutoWearLevel failed _EraseAndMarkEC(0x%X) (line:%d)",0xA
+SDRAM:083C4710             DCB "[FTL:ERR] __HandleRefreshBlock failed calling _FTLMarkCxtNotVali"   
+SDRAM:083C4754             DCB "[FTL:WRN] info in the refresh list seems to be out of date - rem"   
+SDRAM:083C47BC             DCB "[FTL:ERR] _HandleRefreshBlock failed _SetFreeVb(0x%X) (line:%d)",0xA
+SDRAM:083C4800             DCB "[FTL:WRN] Recovering NAND Data Structures - this will take some "   
+SDRAM:083C4848             DCB "[FTL:ERR] _FTLRestore found block (#%d) with unidentified spare("   
+SDRAM:083C48A8             DCB "[FTL:ERR] _FTLRestore found block (#%d) with unidentified spare("   
+SDRAM:083C48FC             DCB "[FTL:ERR]  _FTLRestore - # of LOG blcoks > LOG_SECTION_SIZE fail"   
+SDRAM:083C4958             DCB "[FTL:ERR]  _FTLRestore - not all free vb were located - disk is "   
+SDRAM:083C49B8             DCB "[FTL:ERR]  _FTLRestore - pstFTLCxt->pawMapTable[0x%X] = 0x%X - r"   
+SDRAM:083C4A20             DCB "[FTL:ERR]  _FTLRestore - pFTLRestoreStruct[pstFTLCxt->pawMapTabl"   
+SDRAM:083C4A78             DCB "[FTL:ERR]  pstFTLCxt->pawMapTable[0x%X] = 0x%X - restore is abou"   
+SDRAM:083C4AD0             DCB "[FTL:ERR]  _FTLRestore - _ScanForFreeBlk(0x%X) failed - restore "   
+SDRAM:083C4B30             DCB "[FTL:ERR]  _FTLRestore - _ScanLogSection(0x%X) failed - restore "   
+SDRAM:083C4B90             DCB "[FTL:ERR]  _FTLRestore - IS_LBN_IN_RANGE failed - pFTLRestoreStr"   
+SDRAM:083C4C10             DCB "[FTL:ERR]  _FTLRestore - IS_LBN_IN_RANGE failed - pstFTLCxt->paw"   
+SDRAM:083C4CB4             DCB "[FTL:ERR]  _FTLRestore - pFTLRestoreStruct[0x%X].bSpareType = 0x"   
+SDRAM:083C4D2C             DCB "[FTL:ERR]  _FTLRestore - wDataBlkCnt = 0x%X, wFreeBlkCnt = 0x%X",0xA
+SDRAM:083C4D70             DCB "[FTL:ERR]  _FTLRestore - pstFTLCxt->wNumOfFreeVb = 0x%X, wLogBlk"   
+SDRAM:083C4DE4             DCB "[FTL:ERR] failed calling _FTLRead(0x%08X, 0x%08X, 0x%08X)(line:%"   
+
+"NAND"
+SDRAM:08061EC0 sub_8061AF4 DCB "[FTL:MSG] Apple NAND Driver (AND) RW",0xA,0                       
+SDRAM:08092A80             DCB "NANDDRIVERSIGN",0                                                 
+SDRAM:08098DAC             DCB "NANDDRIVERSIGN",0                                                 
+SDRAM:0811B6E0             DCB "NAND FLASH DRIVE",0                                               
+SDRAM:082822FD             DCB "[FIL:INF] could not find NAND config in the new NAND tables",0xA,0
+SDRAM:083A9AC5             DCB "[NAND] Panic! %s:%d",0xA,0                                        
+SDRAM:083A9ADD             DCB "[NAND] Assertion Failed %s:%d",0xA,0                              
+SDRAM:083A9B49             DCB "c:\bwa\N58FirmwareWin-182\srcroot\Firmware\Shared\Services\hwapi\soc\samsung\nand\Whimory2_1\OAM\RTXC\WMROAM.c" 
+SDRAM:083A9CAE             DCB "[WMR:ERR] NAND format invalid (mismatch, corrupt, read error or blank NAND device)",0xA,0 
+SDRAM:083A9D99             DCB "AND: NAND initialisation failed due to format mismatch or uninitialised NAND.",0xA,0 
+SDRAM:083C4815             DCB "[FTL:WRN] Recovering NAND Data Structures - this will take some time!",0xA,0 
+SDRAM:083C5729             DCB "c:\bwa\N58FirmwareWin-182\srcroot\Firmware\Shared\Services\hwapi\soc\samsung\nand\Whimory2_1\FIL\M2\M2flash.c",0

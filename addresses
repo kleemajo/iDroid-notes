@@ -1,0 +1,97 @@
+Physical addresses:
+00000000:08000000: mapped to other blocks via miu remap register (sram0, sram2, sram1 or sdram0)
+08000000:07400000: dram (sdram0)
+0f400000:00c00000: vram (sdram0)
+10000000:08000000: unknown (sdram1) (the screen goes crazy when reading/writing to this)
+18000000:08000000: nothing (sdram2)
+20000000:02000000: rom (sram0) (bootrom) (actual size 0x10000 with repeats)
+22000000:02000000: sram (sram1) (actual size 0x40000 with repeats)
+24000000:04000000: nothing (sram2)
+28000000:04000000: nothing (sram3)
+2c000000:04000000: nothing (sram4)
+30000000:08000000: nothing (reserved)
+38000000:08000000: devices (ahb from 38000000 to 3C000000, apb from 3c000000 to 40000000)
+52000000:00100000: amc? (freezes device when read from/written to)
+
+Devices:
+38000000: sha1
+38100000: ??? (2 registers accessed in llb)
+38200000: dmac0
+38400000: usb-otg
+38500000: amc
+38600000: arm7
+38700000: dmac1? (in ioreg and devtree, 0x399 used in iboot)
+38900000: clcd
+38a00000: flash-controller0
+38c00000: aes
+38d00000: sdio
+38e00000: vic
+38e02000: edge ic
+38f00000: h264decoder
+39000000: scaler
+39100000: tv-out
+39200000: tv-out
+39300000: tv-out
+39400000: mbx
+39600000: mpvd
+39700000-3970007f: power
+39700080-000000ff: gpio (gpio ic)
+39900000: dmac1 (in iboot, 0x387 used in ioreg and devtree)
+3b000000: mbx
+3c100000: prng
+3c300000: spi0
+3c400000: otgphyctrl (usb-phy)
+3c500000: clkrstgen (clock)
+3c600000: i2c0
+3c700000: timer
+3c800000: wdt
+3c900000: i2c1
+3ca00000: i2s0
+3cc00000: uart0
+3ce00000: spi1
+3cf00000: gpio
+3d000000: pke
+3d100000: chipid
+3d200000: spi2 (not used?)
+3d700000: xmc (express mezzanine card? external memory controller?)
+3d800000: mipi-dsim
+3da00000: spi3 (not used?)
+3db00000: uart1
+3dc00000: uart2 (not used?)
+3dd00000: uart3 (not used?)
+3de00000: swi
+3e000000: clkrstgen (miu)
+3e100000: spi4
+52000000: amc (advanced mezzanine card) (is this an address??? only in devtree, not ioreg)
+
+Memory maps:
+Bootrom:
+00000000:40000000->00000000 non-cacheable, non-bufferable (default map)
+22000000:00100000->22000000 cacheable, bufferable (sram, bufferable)
+20000000:00100000->20000000 cacheable, bufferable (bootrom, bufferable)
+00000000:00100000->00000000 cacheable, bufferable (bootrom, bufferable)
+24000000:00100000->22000000 non-cacheable, non-bufferable (sram, non-bufferable)
+
+LLB:
+00000000:100000000->00000000 non-cacheable, non-bufferable
+22000000:02000000->22000000 cacheable, bufferable
+08000000:08000000->08000000 cacheable, bufferable
+00000000:00100000->22000000 cacheable, bufferable
+80000000:80000000->00000000 non-cacheable, non-bufferable
+
+iBoot:
+00000000:100000000->00000000 non-cacheable, non-bufferable
+22000000:02000000->22000000 cacheable, bufferable
+08000000:08000000->08000000 cacheable, bufferable
+00000000:00100000->0ff00000 cacheable, bufferable
+80000000:80000000->00000000 non-cacheable, non-bufferable
+
+Pagetable:
+Bootrom:	2202c000
+LLB:		2202c000
+iBoot:		0fff8000
+
+MIU register (0x3E00000C):
+0x0 -> bootrom
+0x3 -> sram
+0x1 -> dram

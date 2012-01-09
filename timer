@@ -1,0 +1,95 @@
+openiboot functions:
+	Name:								Verdict:
+	timer_init_rtc						good
+	timer_setup							good
+	timer_init							good
+	timer_setup_clk						good
+	timer_stop_all						good
+	timer_on_off						good
+	timerIRQHandler						
+	callTimerHandler
+	timer_get_system_microtime
+	timer_get_rtc_ticks					good
+	udelay
+	has_elapsed
+
+iboot functions:
+	Name								address		openiboot equivalent
+	timer_get_rtc_ticks					0FF0D2F8	timer_get_rtc_ticks
+	timer_get_rtc_ticks_wrapper			0FF0D3D8	timer_get_rtc_ticks
+	timer_irq_handler 					0FF0D36C	timerIRQHandler
+	timer_regs							0FF0D408	not needed
+	start_stop_timer					0FF0D434	timer_on_off
+	timer_stop_all						0FF0D490	timer_stop_all
+	sub_FF0D4DE							0FF0D4DE
+	timer_init							0FF0D4FC	timer_init
+	sub_FF0D654							0FF0D654
+	timer_setup_clk						0FF0D6C4	timer_setup_clk
+	timer_setup							0FF0D750	timer_setup/timer_init_rtc
+	sub_FF15E98							0FF15E98
+	tasks_setup							0FF16548
+	sub_FF16740							0FF16740
+	get_rtc_seconds						0FF16888
+	get_ticks_per_sec					0FF0D3E2
+	ticks_to_seconds					0FF1A9DC
+
+structs:
+	TimerInfo
+		bool option6
+		uint32_t divider
+		uint32_t unknown1		looks like this is also the divider...
+								iboot actually uses this value instead of the divider one
+								above which writing to registers for some reason, although
+								they always end up the same in iboot. divider is calculated
+								and this is hard-coded.
+		TimerHandler handler1 (function)
+		TimerHandler handler2
+		TimerHandler handler3
+		
+	TimerRegisters (array of registers for a specific timer)
+			(from http://theiphonewiki.com/wiki/index.php?title=S5L8720_Timers_(Hardware))
+			-> these are probably actually wrong since all of the functions for iphone
+				touching these are identical to ipod2g. I'm going to assume that they are
+				the same as what is currently in openiboot.
+		uint32_t config
+		uint32_t control_reg
+		uint32_t compare_buffer
+		uint32_t counter_buffer
+		uint32_t prescaler
+		uint32_t observation
+
+globals:
+	Address			Value/use
+	0xFF273A4		fixed-frequency/2	-> TicksPerSec (setup in clock.c)
+	0xFF272E0		TimerInfo Timers[8] (need to verify the 8, but most likely this)
+							
+
+timer config register (from http://theiphonewiki.com/wiki/index.php?title=S5L8720_Timers_(Hardware)):
+	Bit		Access	Function
+	2-0		x		No Function / Unknown
+	3		RW		Switches Bit 23 (TOUT) randomly if set...
+	4		RW		Compare Mode: Counter runs up to TCMPB (Modebit 0)
+	5		RW		Auto-Reload: (Modebit 1)
+					1 = One-Shoot
+					0 = Interval Mode
+					Counter runs up to TCMPB
+	6		RW		Clock Select
+					0	=>	133MHz Timer Clock
+					1 and Divider = 1 and Prescaler = 0	=>	133MHz Timer Clock
+					1 and (Divider > 1 or Prescaler > 0)	=>	24MHz Timer Clock
+	7		RW		Unknown
+	10-8	RW		Divider
+	11		RW		Invert TOUT
+	14-12	RW		some order of INT0_EN, INT1_EN, OVF_EN (interrupts)
+	15		x		No Function / Unknown
+	22-16	x		Unknown
+	23		RW		Timer Out (TOUT)
+					In mode 0x00: Bit 23 = Toggle when TCNT = 0
+					In mode 0x01: Bit 23 = (TCNT >= TCMP)
+					In mode 0x10: Bit 23 = (TCNT >= TCMP)
+					In mode 0x11: Bit 23 = Toggle when TCNT = TCMP
+	24		RW		Counting Direction: 0 = Up, 1 = Down (Only on Timer 4-7)
+	27-25	x		No Function / Unknown
+	28		RW		When counting down, count down starting at TCMPB (Only on Timer 4-7)
+	31-29	x		No Function / Unknown
+

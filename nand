@@ -1,0 +1,30 @@
+Component sections and my function naming scheme:
+	nand (general stuff)
+	fil: flash interface layer, low level communication with chip (fil_...)
+		-> unnamed: s5l8900 (fil_8900_...)
+		-> m2fmss: (or just fmss) s5l8720 (ipt2g, nano 4g) (fil_m2fmss_...)
+		-> h2fmi: (or just fmi) 3gs and later (fil_h2fmi_...)
+	ftl: flash translation layer, handles wear leveling and similar things
+		-> ftl: original implementation, used up to 3g
+		-> yaftl: newer, used in ipt2g and up. (ftl_yaftl_...)
+		   These devices still have the ftl code in iboot!
+	vfl: virtual flash layer, what the os sees
+		-> vfl: original implementation, used up to 3g (vfl_vfl_...)
+		-> vsvfl: newer, used in ipt2g and up. (vfl_vsvfl_...)
+		   These devices still have the vfl code in iboot!
+	other:
+		fpart: manages partitions? seems to be a part of ftl, so I'm labelling it ftl_fpart_...
+		
+
+interesting functions:
+	0FF15982: table set up, finding chip id. check a4/other tables for similarities.
+	0FF15634: fmss_setup
+	0FF02390: nand_setup
+	0FF0A2B4: nand_init
+
+	register (arrays of functions) setups:
+	0FF07A8C: vfl
+	0FF08914: vsvfl
+	0FF0254C: ftl
+	0FF051C4: yaftl
+	0FF151C8: fmss

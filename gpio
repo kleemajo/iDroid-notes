@@ -1,0 +1,126 @@
+gpio has two separate devices:
+GPIO (0x3cf00000)
+	-> regs to do configuration, input, output for each port/pin
+GPIOIC (0x39700080-0x397000ff)
+	-> interrupt control for each port/pin
+
+====================
+GPIO:
+====================
+
+0x000-0x200:
+	max 0x10 ports, with 8 pins each.
+	-> ports 0x0-0xe are actually used.
+	-> port 0xf would be where FSEL is. It isn't touched in oiB, but there
+		is code to handle port 0xf as spi numbers instead...
+	-> 0x20 bytes for each port, so in memory from 0x0 to 0x200
+0x1E0:
+	FSEL, magic controller thing that does stuff like set pins for input/output
+0x380:
+	unknown, set to 0xF5555 in iboot when a bunch of other stuff is disabled
+
+Port layout:
+Layout used in openiBoot: WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!
+0x00 CON
+0x04 DAT
+WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!
+0x08 PUP	(PUD1[x], PUD2[x]): (0, 0) = pull up/down for x disabled,
+0x0C PDOWN		(0, 1) = pull down, (1, 0) = pull up
+WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!
+0x10 CONSLP1
+0x14 CONSLP2
+0x18 PUSLP
+0x1C PDSLP
+WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!WRONG!
+
+Actual port layout (both s5l8720 and s5l8900):
+0x00 CON
+0x04 DAT
+0x08 ?
+0x0C PUP	(PUP[x], PDOWN[x]): (0, 0) = pull up/down for x disabled,
+0x10 PDOWN		(0, 1) = pull down, (1, 0) = pull up
+? CONSLP1
+? CONSLP2
+? PUSLP
+? PDSLP
+
+Port/pin usage:
+-> encoded as 15-8 = port, 7-0 = pin
+Port	Pin		Use
+0x0		0x0		spi0 cs0
+		0x2		audio0 hp detect
+		0x4		uart0 rx
+		0x5		uart0 tx
+		0x6		sdio power enable
+		0x7		mikey interrupt status
+0x1		0x2		i2c1 scl
+		0x3		i2c1 sda
+		0x6		? (something to do with lcd, set to have no pull up/down in iboot)
+		0x7		lcd reset
+0x2		0x3		? (stopped in iboot)
+		0x7		i2c0 scl
+0x3		0x0		i2c0 sda
+		0x1		? (stopped in iboot)
+		0x2		bdid (board id) bit 2
+		0x3		bdid (board id) bit 1
+		0x4		bdid (board id) bit 0
+		0x5		nor spi num bit 2
+		0x6		nor spi num bit 1
+		0x7		nor spi num bit 0
+0x4		0x0		? (stopped in iboot)
+		0x1		? (stopped in iboot)
+		0x2		? (stopped in iboot)
+		0x3		? (stopped in iboot)
+		0x4		? (stopped in iboot)
+		0x5		? (stopped in iboot)
+		0x6		spi1 cs0
+0x8		0x7		tv-out amp enable
+0x9		0x0		audio0 reset
+		0x2		button volup
+		0x7		uart1 tx
+0xA		0x0		uart1 rts
+		0x2		sdio device wake
+		0x3		bluetooth wake
+		0x4		bluetooth reset
+		0x6		multi touch reset
+		0x7		spi4 cs0
+0xC		0x0		button voldown
+		0x1		button menu
+		0x2		button hold
+		0x4		? (stopped in iboot)
+		0x5		? (stopped in iboot)
+		0x6		? (stopped in iboot)
+		0x7		? (stopped in iboot)
+0xD		0x0		? (stopped in iboot)
+		0x1		? (stopped in iboot)
+		0x2		? (stopped in iboot)
+		0x3		? (stopped in iboot)
+		0x4		? (stopped in iboot)
+		0x5		? (stopped in iboot)
+		0x6		? (stopped in iboot)
+		0x7		? (stopped in iboot)
+0xE		0x0		? (stopped in iboot)
+		0x1		? (stopped in iboot)
+		0x2		spkr amp enable
+		0x5		sdio device reset
+
+FSEL:
+bits:
+	0-3		command
+	8-10	pin
+	16-20	port
+commands: (this is very iffy...)
+	Binary	Hex		Meaning
+	0b0000	0x0		enable input
+	0b0010	0x2		stop? 			this and 0x3 could be switched?
+	0b0011	0x3		start?			-> or could be output low/high as well?
+	0b1110	0xe		output low
+	0b1111	0xf		output high
+
+
+===================
+GPIO IC:
+===================
+
+See iBoot, seems to work fine
+
